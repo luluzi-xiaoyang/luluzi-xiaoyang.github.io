@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on 我的生活记录</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on 我的生活记录</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 03 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>家常菜</title>
+      <link>http://localhost:1313/tags/%E5%AE%B6%E5%B8%B8%E8%8F%9C/</link>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/%E5%AE%B6%E5%B8%B8%E8%8F%9C/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>红烧肉</title>
+      <link>http://localhost:1313/tags/%E7%BA%A2%E7%83%A7%E8%82%89/</link>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/%E7%BA%A2%E7%83%A7%E8%82%89/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>美食</title>
+      <link>http://localhost:1313/tags/%E7%BE%8E%E9%A3%9F/</link>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/%E7%BE%8E%E9%A3%9F/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>公园</title>
+      <link>http://localhost:1313/tags/%E5%85%AC%E5%9B%AD/</link>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/%E5%85%AC%E5%9B%AD/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>周末</title>
+      <link>http://localhost:1313/tags/%E5%91%A8%E6%9C%AB/</link>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/%E5%91%A8%E6%9C%AB/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>城市</title>
+      <link>http://localhost:1313/tags/%E5%9F%8E%E5%B8%82/</link>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/%E5%9F%8E%E5%B8%82/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vlog</title>
+      <link>http://localhost:1313/tags/vlog/</link>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/vlog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>日常</title>
+      <link>http://localhost:1313/tags/%E6%97%A5%E5%B8%B8/</link>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/%E6%97%A5%E5%B8%B8/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>记录</title>
+      <link>http://localhost:1313/tags/%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/%E8%AE%B0%E5%BD%95/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
