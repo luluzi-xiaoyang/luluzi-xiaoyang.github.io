@@ -1,258 +1,357 @@
 /* ============================================================
-   情侣空间温馨红色主题 — PaperMod
+   情侣空间 · 温馨奶油风 — PaperMod
    ============================================================ */
 
-/* ---------- 思源黑体全局字体 ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
+/* ---------- 全局字体 ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
 
 :root {
-  --font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  --content-gap: 1.2rem;
-  /* 红色温馨主题变量覆盖 */
-  --primary: #e74c3c;
-  --secondary: #c0392b;
+  --font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --content-gap: 1.5rem;
+  --bg-primary: #fdf6f0;
+  --bg-card: #ffffff;
+  --rose-100: #ffe4e6;
+  --rose-200: #fecdd3;
+  --rose-300: #fda4af;
+  --rose-400: #fb7185;
+  --rose-500: #f43f5e;
+  --rose-600: #e11d48;
+  --rose-50: #fff1f2;
+  --warm-cream: #fef7ed;
+  --warm-peach: #fff0e6;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--font-family);
   font-weight: 400;
-  letter-spacing: 0.02em;
-  background: #fef9f9;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+  /* 温馨奶油色背景 */
+  background: var(--bg-primary);
+  background-image:
+    /* 左上柔和光晕 */
+    radial-gradient(ellipse at 15% 5%, rgba(254, 205, 211, 0.25) 0%, transparent 50%),
+    /* 右下温暖光晕 */
+    radial-gradient(ellipse at 85% 90%, rgba(255, 237, 213, 0.3) 0%, transparent 50%),
+    /* 中间微妙暖光 */
+    radial-gradient(ellipse at 50% 40%, rgba(254, 242, 242, 0.15) 0%, transparent 60%);
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
-/* ---------- 导航栏 — 红色温馨渐变 ---------- */
+/* ---------- 导航栏 — 毛玻璃奶油玫瑰 ---------- */
 .nav {
-  background: linear-gradient(135deg, #e74c3c 0%, #ff6b81 50%, #e74c3c 100%) !important;
-  box-shadow: 0 2px 20px rgba(231, 76, 60, 0.3);
-  border-bottom: none !important;
+  background: rgba(255, 255, 255, 0.82) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(254, 205, 211, 0.3) !important;
   position: sticky;
   top: 0;
   z-index: 100;
-  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 12px rgba(244, 63, 94, 0.06);
 }
 
 .nav a,
 .nav .logo a,
 .nav .menu a {
-  color: #ffffff !important;
+  color: var(--rose-600) !important;
+  font-weight: 500;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav .menu a:hover {
+  color: var(--rose-500) !important;
+  transform: translateY(-1px);
 }
 
 .nav .menu .active {
-  text-decoration-color: rgba(255, 255, 255, 0.7);
-}
-
-.nav .theme-toggle svg {
-  color: #ffffff !important;
-  stroke: #ffffff !important;
-  fill: #ffffff !important;
+  text-decoration-color: var(--rose-400);
+  text-underline-offset: 4px;
 }
 
 .nav .nav-sep {
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: var(--rose-200) !important;
 }
 
-/* ---------- 首页大标题 — 红色渐变文字 ---------- */
+/* ---------- 首页欢迎区 ---------- */
+.home-info {
+  padding: 2rem 0;
+}
+
 .home-info .entry-header h1,
 .first-entry .entry-header h1,
 .first-entry .entry-header h2 {
-  background: linear-gradient(135deg, #e74c3c, #ff6b81, #ff9a9e, #e74c3c);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradientShift 6s ease-in-out infinite;
+  color: var(--rose-600);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  -webkit-text-fill-color: var(--rose-600);
 }
 
-@keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+.home-info .entry-content,
+.home-info p {
+  color: var(--text-secondary);
+  line-height: 1.8;
 }
 
-/* ---------- 文章卡片 — 温馨红色风格 ---------- */
+/* ---------- 文章卡片 — 温柔圆角卡片 ---------- */
 .post-entry {
-  background: #ffffff;
-  border-radius: 16px;
-  border: 1px solid rgba(231, 76, 60, 0.15);
-  box-shadow: 0 4px 20px rgba(231, 76, 60, 0.06);
-  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background: var(--bg-card);
+  border-radius: 20px;
+  border: 1px solid rgba(254, 205, 211, 0.35);
+  box-shadow:
+    0 2px 8px rgba(244, 63, 94, 0.04),
+    0 8px 24px rgba(244, 63, 94, 0.03);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   overflow: hidden;
+  padding: 1.2rem 1.5rem;
 }
 
 .post-entry:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(231, 76, 60, 0.15);
-  border-color: #e74c3c;
+  transform: translateY(-4px);
+  box-shadow:
+    0 4px 16px rgba(244, 63, 94, 0.08),
+    0 16px 40px rgba(244, 63, 94, 0.06);
+  border-color: var(--rose-300);
+}
+
+.post-entry .entry-title {
+  font-weight: 600;
+}
+
+.post-entry .entry-title a {
+  color: var(--text-primary);
 }
 
 .post-entry .entry-title a:hover {
-  color: #e74c3c !important;
+  color: var(--rose-500) !important;
 }
 
-/* ---------- 分类页面标签 — 红色渐变 ---------- */
+.post-entry .entry-hint {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* ---------- 分类/标签 — 柔和药丸 ---------- */
 .terms-tags {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
   margin-top: var(--content-gap);
 }
 
 .terms-tags li {
-  display: block;
-  font-weight: 500;
+  display: inline-block;
 }
 
 .terms-tags a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 16px;
-  background: rgba(231, 76, 60, 0.08);
-  border-radius: 12px;
+  display: inline-block;
+  padding: 8px 18px;
+  background: var(--rose-50);
+  border: 1px solid var(--rose-100);
+  border-radius: 100px;
+  color: var(--rose-600);
+  font-size: 0.88rem;
+  font-weight: 500;
   transition: all 0.3s ease;
-  text-align: center;
-  font-size: 0.95rem;
-  color: #c0392b;
+  text-decoration: none;
 }
 
 .terms-tags a:hover {
-  background: linear-gradient(135deg, #e74c3c, #ff6b81);
+  background: var(--rose-500);
+  border-color: var(--rose-500);
   color: #ffffff !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.3);
+  box-shadow: 0 4px 14px rgba(244, 63, 94, 0.25);
 }
 
-/* ---------- 归档页面 — 红色竖线 ---------- */
+/* ---------- 归档 — 柔和时间线 ---------- */
 .archive-year {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: #e74c3c;
-  position: relative;
-  padding-left: 1rem;
-}
-
-.archive-year::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.2em;
-  bottom: 0.2em;
-  width: 4px;
-  background: linear-gradient(180deg, #e74c3c, #ff6b81);
-  border-radius: 2px;
+  color: var(--rose-500);
 }
 
 .archive-month-header {
-  font-weight: 500;
-  color: #c0392b;
+  font-weight: 600;
+  color: var(--rose-400);
 }
 
 .archive-entry {
-  padding: 8px 12px;
-  margin: 6px 0;
-  border-radius: 8px;
+  padding: 8px 14px;
+  margin: 4px 0;
+  border-radius: 10px;
   transition: background 0.2s ease;
 }
 
 .archive-entry:hover {
-  background: rgba(231, 76, 60, 0.06);
+  background: var(--rose-50);
 }
 
-/* ---------- 链接和按钮 ---------- */
+/* ---------- 链接 — 玫瑰色 ---------- */
 a {
-  color: #e74c3c;
+  color: var(--rose-500);
+  transition: color 0.2s ease;
 }
 
 a:hover {
-  color: #c0392b;
+  color: var(--rose-600);
 }
 
-/* ---------- 分隔线 — 爱心装饰 ---------- */
+/* ---------- 分隔线 — 淡粉渐变 ---------- */
 hr {
   border: none;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #e74c3c, #ff6b81, #e74c3c, transparent);
+  background: linear-gradient(90deg, transparent 0%, var(--rose-200) 30%, var(--rose-300) 50%, var(--rose-200) 70%, transparent 100%);
   margin: 2rem 0;
+  opacity: 0.6;
 }
 
-/* ---------- 滚动条 — 红色 ---------- */
+/* ---------- 滚动条 — 柔和玫瑰 ---------- */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #fef9f9;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #e74c3c, #ff6b81);
-  border-radius: 4px;
+  background: var(--rose-200);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #c0392b, #e74c3c);
+  background: var(--rose-300);
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #e74c3c #fef9f9;
+  scrollbar-color: var(--rose-200) transparent;
+}
+
+/* ---------- 面包屑 ---------- */
+.breadcrumbs {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.breadcrumbs a {
+  color: var(--rose-400);
+}
+
+/* ---------- 首页文章列表间距 ---------- */
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 /* ---------- 代码块 ---------- */
 div.highlight {
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
-/* ---------- 页脚 — 爱心主题 ---------- */
+/* ---------- 引用块 — 温馨玫瑰 ---------- */
+blockquote {
+  border-left: 3px solid var(--rose-300);
+  background: var(--rose-50);
+  padding: 0.8rem 1.2rem;
+  border-radius: 0 12px 12px 0;
+  color: var(--text-secondary);
+}
+
+/* ---------- 页脚 ---------- */
 .footer {
-  color: #999;
-  padding: 1rem 0;
+  color: var(--text-muted);
+  padding: 2rem 0 1rem;
   text-align: center;
+  font-size: 0.85rem;
+  margin-top: 3rem;
+  border-top: 1px solid var(--rose-100);
 }
 
-/* ---------- 浮动爱心背景装饰 ---------- */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-  background-image:
-    radial-gradient(circle at 10% 20%, rgba(231, 76, 60, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 90% 80%, rgba(255, 107, 129, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(231, 76, 60, 0.02) 0%, transparent 60%);
-}
-
-/* ---------- 选中文字颜色 ---------- */
+/* ---------- 选中文字 ---------- */
 ::selection {
-  background: rgba(231, 76, 60, 0.2);
-  color: #c0392b;
+  background: var(--rose-100);
+  color: var(--rose-600);
 }
 
-/* ---------- 面包屑 — 红色 ---------- */
-.breadcrumbs {
-  color: #999;
+/* ---------- 暗色模式适配 ---------- */
+[data-theme="dark"] body,
+.dark body {
+  background: #1a1215;
+  background-image:
+    radial-gradient(ellipse at 15% 5%, rgba(225, 29, 72, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 90%, rgba(190, 18, 60, 0.06) 0%, transparent 50%);
+  color: #e5e7eb;
 }
 
-.breadcrumbs a {
-  color: #e74c3c;
+[data-theme="dark"] .nav,
+.dark .nav {
+  background: rgba(26, 18, 21, 0.85) !important;
+  border-bottom: 1px solid rgba(225, 29, 72, 0.15) !important;
+}
+
+[data-theme="dark"] .nav a,
+[data-theme="dark"] .nav .logo a,
+[data-theme="dark"] .nav .menu a,
+.dark .nav a,
+.dark .nav .logo a,
+.dark .nav .menu a {
+  color: var(--rose-300) !important;
+}
+
+[data-theme="dark"] .post-entry,
+.dark .post-entry {
+  background: #231a1e;
+  border-color: rgba(225, 29, 72, 0.2);
+}
+
+[data-theme="dark"] .post-entry .entry-title a,
+.dark .post-entry .entry-title a {
+  color: #f3f4f6;
+}
+
+[data-theme="dark"] .terms-tags a,
+.dark .terms-tags a {
+  background: rgba(225, 29, 72, 0.1);
+  border-color: rgba(225, 29, 72, 0.2);
+  color: var(--rose-300);
+}
+
+[data-theme="dark"] blockquote,
+.dark blockquote {
+  background: rgba(225, 29, 72, 0.08);
+}
+
+[data-theme="dark"] hr,
+.dark hr {
+  background: linear-gradient(90deg, transparent, rgba(225, 29, 72, 0.3), rgba(190, 18, 60, 0.4), rgba(225, 29, 72, 0.3), transparent);
 }
 
 /* ---------- 响应式 ---------- */
 @media (max-width: 768px) {
-  .terms-tags {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  }
-
   .first-entry .entry-header h1 {
-    font-size: 28px;
+    font-size: 26px;
   }
 
-  .archive-month-header {
-    width: 100px;
+  .post-entry {
+    padding: 1rem 1.1rem;
+    border-radius: 16px;
+  }
+
+  .terms-tags a {
+    padding: 6px 14px;
+    font-size: 0.82rem;
   }
 }

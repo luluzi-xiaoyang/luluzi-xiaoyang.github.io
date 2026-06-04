@@ -1,10 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <defs>
-    <linearGradient id="hg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#e74c3c"/>
-      <stop offset="50%" style="stop-color:#ff6b81"/>
-      <stop offset="100%" style="stop-color:#e74c3c"/>
+    <linearGradient id="h" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fecdd3"/>
+      <stop offset="40%" style="stop-color:#fb7185"/>
+      <stop offset="100%" style="stop-color:#e11d48"/>
     </linearGradient>
+    <filter id="s">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#fda4af" flood-opacity="0.4"/>
+    </filter>
   </defs>
-  <path d="M50 88 C25 65, 5 45, 15 25 C22 12, 40 12, 50 28 C60 12, 78 12, 85 25 C95 45, 75 65, 50 88Z" fill="url(#hg)"/>
+  <path d="M50 85 C30 65, 8 48, 14 28 C18 16, 32 12, 42 22 L50 32 L58 22 C68 12, 82 16, 86 28 C92 48, 70 65, 50 85Z" fill="url(#h)" filter="url(#s)"/>
 </svg>
