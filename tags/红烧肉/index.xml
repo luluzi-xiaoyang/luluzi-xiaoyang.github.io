@@ -1,44 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>红烧肉 on 我的生活记录</title>
-    <link>http://localhost:1313/tags/%E7%BA%A2%E7%83%A7%E8%82%89/</link>
-    <description>Recent content in 红烧肉 on 我的生活记录</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Wed, 03 Jun 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E7%BA%A2%E7%83%A7%E8%82%89/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>我的第一篇美食记录：家常红烧肉</title>
-      <link>http://localhost:1313/food/first-food-post/</link>
-      <pubDate>Wed, 03 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/food/first-food-post/</guid>
-      <description>&lt;h2 id=&#34;-今天尝试做了红烧肉&#34;&gt;🍖 今天尝试做了红烧肉！&lt;/h2&gt;
-&lt;p&gt;周末在家，决定挑战一下经典的家常菜——&lt;strong&gt;红烧肉&lt;/strong&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;食材准备&#34;&gt;食材准备&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;五花肉 500g&lt;/li&gt;
-&lt;li&gt;冰糖 30g&lt;/li&gt;
-&lt;li&gt;生抽、老抽 各2勺&lt;/li&gt;
-&lt;li&gt;料酒 1勺&lt;/li&gt;
-&lt;li&gt;八角 2个&lt;/li&gt;
-&lt;li&gt;桂皮 1小段&lt;/li&gt;
-&lt;li&gt;葱姜蒜 适量&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;制作步骤&#34;&gt;制作步骤&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;五花肉切块&lt;/strong&gt;，冷水下锅焯水去血沫，捞出沥干&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;炒糖色&lt;/strong&gt;：锅中少油，小火慢炒冰糖至焦糖色&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;下肉翻炒&lt;/strong&gt;：让每块肉都裹上糖色&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;加调料&lt;/strong&gt;：倒入生抽、老抽、料酒，加八角桂皮&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;焖煮&lt;/strong&gt;：加热水没过肉，大火烧开转小火焖45分钟&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;收汁&lt;/strong&gt;：大火收汁至浓稠即可&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;成果&#34;&gt;成果&lt;/h3&gt;
-&lt;p&gt;出锅的时候香气四溢！肥而不腻，入口即化。虽然第一次做糖色有点手忙脚乱，但最终成品还是很满意的 😋&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;小贴士：炒糖色是关键，火候要小要有耐心！&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt=&#34;红烧肉&#34; loading=&#34;lazy&#34; src=&#34;https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=800&#34;&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>红烧肉 on 💕 我们的小天地</title><link>https://luluzi-xiaoyang.github.io/tags/%E7%BA%A2%E7%83%A7%E8%82%89/</link><description>Recent content in 红烧肉 on 💕 我们的小天地</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 03 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://luluzi-xiaoyang.github.io/tags/%E7%BA%A2%E7%83%A7%E8%82%89/index.xml" rel="self" type="application/rss+xml"/><item><title>我的第一篇美食记录：家常红烧肉</title><link>https://luluzi-xiaoyang.github.io/food/first-food-post/</link><pubDate>Wed, 03 Jun 2026 00:00:00 +0000</pubDate><guid>https://luluzi-xiaoyang.github.io/food/first-food-post/</guid><description>&lt;h2 id="-今天尝试做了红烧肉">🍖 今天尝试做了红烧肉！&lt;/h2>
+&lt;p>周末在家，决定挑战一下经典的家常菜——&lt;strong>红烧肉&lt;/strong>。&lt;/p>
+&lt;h3 id="食材准备">食材准备&lt;/h3>
+&lt;ul>
+&lt;li>五花肉 500g&lt;/li>
+&lt;li>冰糖 30g&lt;/li>
+&lt;li>生抽、老抽 各2勺&lt;/li>
+&lt;li>料酒 1勺&lt;/li>
+&lt;li>八角 2个&lt;/li>
+&lt;li>桂皮 1小段&lt;/li>
+&lt;li>葱姜蒜 适量&lt;/li>
+&lt;/ul>
+&lt;h3 id="制作步骤">制作步骤&lt;/h3>
+&lt;ol>
+&lt;li>&lt;strong>五花肉切块&lt;/strong>，冷水下锅焯水去血沫，捞出沥干&lt;/li>
+&lt;li>&lt;strong>炒糖色&lt;/strong>：锅中少油，小火慢炒冰糖至焦糖色&lt;/li>
+&lt;li>&lt;strong>下肉翻炒&lt;/strong>：让每块肉都裹上糖色&lt;/li>
+&lt;li>&lt;strong>加调料&lt;/strong>：倒入生抽、老抽、料酒，加八角桂皮&lt;/li>
+&lt;li>&lt;strong>焖煮&lt;/strong>：加热水没过肉，大火烧开转小火焖45分钟&lt;/li>
+&lt;li>&lt;strong>收汁&lt;/strong>：大火收汁至浓稠即可&lt;/li>
+&lt;/ol>
+&lt;h3 id="成果">成果&lt;/h3>
+&lt;p>出锅的时候香气四溢！肥而不腻，入口即化。虽然第一次做糖色有点手忙脚乱，但最终成品还是很满意的 😋&lt;/p>
+&lt;blockquote>
+&lt;p>小贴士：炒糖色是关键，火候要小要有耐心！&lt;/p>&lt;/blockquote>
+&lt;p>&lt;img alt="红烧肉" loading="lazy" src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=800">&lt;/p></description></item></channel></rss>
