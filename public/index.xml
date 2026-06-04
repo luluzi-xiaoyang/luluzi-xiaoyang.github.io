@@ -1,121 +1,89 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>我的生活记录</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on 我的生活记录</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Wed, 03 Jun 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>我的第一篇美食记录：家常红烧肉</title>
-      <link>http://localhost:1313/food/first-food-post/</link>
-      <pubDate>Wed, 03 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/food/first-food-post/</guid>
-      <description>&lt;h2 id=&#34;-今天尝试做了红烧肉&#34;&gt;🍖 今天尝试做了红烧肉！&lt;/h2&gt;
-&lt;p&gt;周末在家，决定挑战一下经典的家常菜——&lt;strong&gt;红烧肉&lt;/strong&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;食材准备&#34;&gt;食材准备&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;五花肉 500g&lt;/li&gt;
-&lt;li&gt;冰糖 30g&lt;/li&gt;
-&lt;li&gt;生抽、老抽 各2勺&lt;/li&gt;
-&lt;li&gt;料酒 1勺&lt;/li&gt;
-&lt;li&gt;八角 2个&lt;/li&gt;
-&lt;li&gt;桂皮 1小段&lt;/li&gt;
-&lt;li&gt;葱姜蒜 适量&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;制作步骤&#34;&gt;制作步骤&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;五花肉切块&lt;/strong&gt;，冷水下锅焯水去血沫，捞出沥干&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;炒糖色&lt;/strong&gt;：锅中少油，小火慢炒冰糖至焦糖色&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;下肉翻炒&lt;/strong&gt;：让每块肉都裹上糖色&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;加调料&lt;/strong&gt;：倒入生抽、老抽、料酒，加八角桂皮&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;焖煮&lt;/strong&gt;：加热水没过肉，大火烧开转小火焖45分钟&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;收汁&lt;/strong&gt;：大火收汁至浓稠即可&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;成果&#34;&gt;成果&lt;/h3&gt;
-&lt;p&gt;出锅的时候香气四溢！肥而不腻，入口即化。虽然第一次做糖色有点手忙脚乱，但最终成品还是很满意的 😋&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;小贴士：炒糖色是关键，火候要小要有耐心！&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt=&#34;红烧肉&#34; loading=&#34;lazy&#34; src=&#34;https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=800&#34;&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>城市漫步：周末的公园时光</title>
-      <link>http://localhost:1313/travel/weekend-park-walk/</link>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/travel/weekend-park-walk/</guid>
-      <description>&lt;h2 id=&#34;-周末不想远行家门口的公园也很美&#34;&gt;🌳 周末不想远行？家门口的公园也很美&lt;/h2&gt;
-&lt;p&gt;今天天气特别好，蓝天白云，温度刚好。决定不去远方，就在家附近的公园走走。&lt;/p&gt;
-&lt;h3 id=&#34;路线&#34;&gt;路线&lt;/h3&gt;
-&lt;p&gt;从家出发 → 经过老街 → 穿过梧桐大道 → 到达中心公园 → 湖边散步 → 回程&lt;/p&gt;
-&lt;h3 id=&#34;发现的惊喜&#34;&gt;发现的惊喜&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;一家开了20年的老咖啡店，拿铁意外的好喝&lt;/li&gt;
-&lt;li&gt;公园里有人在练习萨克斯，旋律很美&lt;/li&gt;
-&lt;li&gt;夕阳下的湖面波光粼粼，拍了几张很满意的照片&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;有时候不需要精心策划的旅行，随意的漫步也能发现生活的美好 ✨&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;公园风景&#34; loading=&#34;lazy&#34; src=&#34;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&#34;&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Vlog #001：一个普通周六的日常记录</title>
-      <link>http://localhost:1313/vlog/vlog-001-saturday/</link>
-      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/vlog/vlog-001-saturday/</guid>
-      <description>&lt;h2 id=&#34;-vlog-第一集我的周六是怎么过的&#34;&gt;📹 Vlog 第一集：我的周六是怎么过的&lt;/h2&gt;
-&lt;p&gt;终于鼓起勇气开始拍 Vlog 了！这是第一集，记录了一个普普通通但充实的周六。&lt;/p&gt;
-&lt;h3 id=&#34;时间线&#34;&gt;时间线&lt;/h3&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;时间&lt;/th&gt;
-          &lt;th&gt;事件&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;08:00&lt;/td&gt;
-          &lt;td&gt;起床，一杯黑咖啡 ☕&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;09:00&lt;/td&gt;
-          &lt;td&gt;整理房间，断舍离&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;11:00&lt;/td&gt;
-          &lt;td&gt;去超市采购本周食材&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;12:30&lt;/td&gt;
-          &lt;td&gt;午餐：做了个简易意面&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;14:00&lt;/td&gt;
-          &lt;td&gt;下午茶+看书&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;16:00&lt;/td&gt;
-          &lt;td&gt;出门散步 + 拍素材&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;18:00&lt;/td&gt;
-          &lt;td&gt;晚餐时间&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;20:00&lt;/td&gt;
-          &lt;td&gt;剪辑视频&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;23:00&lt;/td&gt;
-          &lt;td&gt;睡觉 💤&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;感想&#34;&gt;感想&lt;/h3&gt;
-&lt;p&gt;拍 Vlog 比想象中难很多，尤其是对着镜头说话还是会觉得尴尬。但回看素材的时候，发现记录下来的瞬间真的很珍贵。继续加油吧！&lt;/p&gt;
-&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;about:blank&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
-&lt;p&gt;&lt;em&gt;（视频上传功能后续配置中）&lt;/em&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>💕 我们的小天地</title><link>https://luluzi-xiaoyang.github.io/</link><description>Recent content on 💕 我们的小天地</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 03 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://luluzi-xiaoyang.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>我的第一篇美食记录：家常红烧肉</title><link>https://luluzi-xiaoyang.github.io/food/first-food-post/</link><pubDate>Wed, 03 Jun 2026 00:00:00 +0000</pubDate><guid>https://luluzi-xiaoyang.github.io/food/first-food-post/</guid><description>&lt;h2 id="-今天尝试做了红烧肉">🍖 今天尝试做了红烧肉！&lt;/h2>
+&lt;p>周末在家，决定挑战一下经典的家常菜——&lt;strong>红烧肉&lt;/strong>。&lt;/p>
+&lt;h3 id="食材准备">食材准备&lt;/h3>
+&lt;ul>
+&lt;li>五花肉 500g&lt;/li>
+&lt;li>冰糖 30g&lt;/li>
+&lt;li>生抽、老抽 各2勺&lt;/li>
+&lt;li>料酒 1勺&lt;/li>
+&lt;li>八角 2个&lt;/li>
+&lt;li>桂皮 1小段&lt;/li>
+&lt;li>葱姜蒜 适量&lt;/li>
+&lt;/ul>
+&lt;h3 id="制作步骤">制作步骤&lt;/h3>
+&lt;ol>
+&lt;li>&lt;strong>五花肉切块&lt;/strong>，冷水下锅焯水去血沫，捞出沥干&lt;/li>
+&lt;li>&lt;strong>炒糖色&lt;/strong>：锅中少油，小火慢炒冰糖至焦糖色&lt;/li>
+&lt;li>&lt;strong>下肉翻炒&lt;/strong>：让每块肉都裹上糖色&lt;/li>
+&lt;li>&lt;strong>加调料&lt;/strong>：倒入生抽、老抽、料酒，加八角桂皮&lt;/li>
+&lt;li>&lt;strong>焖煮&lt;/strong>：加热水没过肉，大火烧开转小火焖45分钟&lt;/li>
+&lt;li>&lt;strong>收汁&lt;/strong>：大火收汁至浓稠即可&lt;/li>
+&lt;/ol>
+&lt;h3 id="成果">成果&lt;/h3>
+&lt;p>出锅的时候香气四溢！肥而不腻，入口即化。虽然第一次做糖色有点手忙脚乱，但最终成品还是很满意的 😋&lt;/p>
+&lt;blockquote>
+&lt;p>小贴士：炒糖色是关键，火候要小要有耐心！&lt;/p>&lt;/blockquote>
+&lt;p>&lt;img alt="红烧肉" loading="lazy" src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=800">&lt;/p></description></item><item><title>城市漫步：周末的公园时光</title><link>https://luluzi-xiaoyang.github.io/travel/weekend-park-walk/</link><pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate><guid>https://luluzi-xiaoyang.github.io/travel/weekend-park-walk/</guid><description>&lt;h2 id="-周末不想远行家门口的公园也很美">🌳 周末不想远行？家门口的公园也很美&lt;/h2>
+&lt;p>今天天气特别好，蓝天白云，温度刚好。决定不去远方，就在家附近的公园走走。&lt;/p>
+&lt;h3 id="路线">路线&lt;/h3>
+&lt;p>从家出发 → 经过老街 → 穿过梧桐大道 → 到达中心公园 → 湖边散步 → 回程&lt;/p>
+&lt;h3 id="发现的惊喜">发现的惊喜&lt;/h3>
+&lt;ul>
+&lt;li>一家开了20年的老咖啡店，拿铁意外的好喝&lt;/li>
+&lt;li>公园里有人在练习萨克斯，旋律很美&lt;/li>
+&lt;li>夕阳下的湖面波光粼粼，拍了几张很满意的照片&lt;/li>
+&lt;/ul>
+&lt;p>有时候不需要精心策划的旅行，随意的漫步也能发现生活的美好 ✨&lt;/p>
+&lt;p>&lt;img alt="公园风景" loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800">&lt;/p></description></item><item><title>Vlog #001：一个普通周六的日常记录</title><link>https://luluzi-xiaoyang.github.io/vlog/vlog-001-saturday/</link><pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate><guid>https://luluzi-xiaoyang.github.io/vlog/vlog-001-saturday/</guid><description>&lt;h2 id="-vlog-第一集我的周六是怎么过的">📹 Vlog 第一集：我的周六是怎么过的&lt;/h2>
+&lt;p>终于鼓起勇气开始拍 Vlog 了！这是第一集，记录了一个普普通通但充实的周六。&lt;/p>
+&lt;h3 id="时间线">时间线&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>时间&lt;/th>
+&lt;th>事件&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>08:00&lt;/td>
+&lt;td>起床，一杯黑咖啡 ☕&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>09:00&lt;/td>
+&lt;td>整理房间，断舍离&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>11:00&lt;/td>
+&lt;td>去超市采购本周食材&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>12:30&lt;/td>
+&lt;td>午餐：做了个简易意面&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>14:00&lt;/td>
+&lt;td>下午茶+看书&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>16:00&lt;/td>
+&lt;td>出门散步 + 拍素材&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>18:00&lt;/td>
+&lt;td>晚餐时间&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>20:00&lt;/td>
+&lt;td>剪辑视频&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>23:00&lt;/td>
+&lt;td>睡觉 💤&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="感想">感想&lt;/h3>
+&lt;p>拍 Vlog 比想象中难很多，尤其是对着镜头说话还是会觉得尴尬。但回看素材的时候，发现记录下来的瞬间真的很珍贵。继续加油吧！&lt;/p>
+&lt;iframe width="560" height="315" src="about:blank" title="YouTube video player" frameborder="0">&lt;/iframe>
+&lt;p>&lt;em>（视频上传功能后续配置中）&lt;/em>&lt;/p></description></item></channel></rss>

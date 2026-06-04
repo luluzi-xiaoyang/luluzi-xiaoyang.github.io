@@ -1,6 +1,6 @@
-baseURL = 'https://yangcx74.github.io/'
+baseURL = 'https://luluzi-xiaoyang.github.io/'
 languageCode = 'zh-cn'
-title = '我的生活记录'
+title = '💕 我们的小天地'
 
 theme = 'PaperMod'
 
@@ -14,8 +14,8 @@ canonifyURLs = true
 [params]
   [params.assets]
     favicon = 'favicon.svg'
-  description = '记录美食、旅行与生活的点点滴滴 — 一个热爱生活的个人博客'
-  author = '生活家'
+  description = '记录我们的甜蜜日常 — 属于我们的小小世界'
+  author = '小透明 & 小可爱'
   defaultTheme = 'auto'
   ShowReadingTime = true
   ShowShareButtons = true
@@ -24,7 +24,7 @@ canonifyURLs = true
   ShowCodeCopyButtons = true
 
   # SEO
-  keywords = ['美食', '旅行', 'Vlog', '生活记录', '博客']
+  keywords = ['情侣', '恋爱', '日常', '甜蜜', '记录']
   images = ['/favicon.svg']
 
   # 中文字体支持
@@ -40,16 +40,18 @@ canonifyURLs = true
     keys = ['title', 'permalink', 'summary', 'content']
 
   [params.homeInfoParams]
-    Title = '你好，欢迎来我的小窝 🏠'
+    Title = '💕 欢迎来到我们的小天地'
     Content = '''
-      这里记录着我平凡生活里的闪光瞬间——
-      **🍜 美食探店**｜**✈️ 旅行打卡**｜**📹 日常Vlog**
+      这里是属于我们的甜蜜空间——
+      记录每一个温暖的小瞬间 💝
 
-      > 生活不是为了赶路，而是为了感受路。
+      **🍰 一起吃好吃的**｜**🌹 一起看风景**｜**📸 一起拍美美的照片**
+
+      > 最好的时光，是和你在一起的每一刻。
     '''
 
   # [params.socialIcons]
-  #   github = "https://github.com/yourusername"
+  #   github = "https://github.com/luluzi-xiaoyang"
 
   # 归档格式
   [params.archive]
@@ -60,22 +62,22 @@ canonifyURLs = true
 [menu]
 [[menu.main]]
   identifier = 'food'
-  name = '🍜 美食分享'
+  name = '🍰 美食时光'
   url = '/food/'
   weight = 1
 [[menu.main]]
   identifier = 'travel'
-  name = '✈️ 旅行打卡'
+  name = '🌹 旅行足迹'
   url = '/travel/'
   weight = 2
 [[menu.main]]
   identifier = 'vlog'
-  name = '📹 日常Vlog'
+  name = '📸 甜蜜日常'
   url = '/vlog/'
   weight = 3
 [[menu.main]]
   identifier = 'about'
-  name = '👤 关于我'
+  name = '💕 关于我们'
   url = '/about/'
   weight = 4
 

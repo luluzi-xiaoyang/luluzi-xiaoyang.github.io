@@ -1,6 +1,5 @@
 /* ============================================================
-   自定义样式扩展 — PaperMod 增强
-   思源黑体 + 渐变导航 + 卡片特效 + 滚动条美化
+   情侣空间温馨红色主题 — PaperMod
    ============================================================ */
 
 /* ---------- 思源黑体全局字体 ---------- */
@@ -9,18 +8,22 @@
 :root {
   --font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   --content-gap: 1.2rem;
+  /* 红色温馨主题变量覆盖 */
+  --primary: #e74c3c;
+  --secondary: #c0392b;
 }
 
 body {
   font-family: var(--font-family);
   font-weight: 400;
   letter-spacing: 0.02em;
+  background: #fef9f9;
 }
 
-/* ---------- 导航栏渐变背景 ---------- */
+/* ---------- 导航栏 — 红色温馨渐变 ---------- */
 .nav {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-  box-shadow: 0 2px 20px rgba(102, 126, 234, 0.3);
+  background: linear-gradient(135deg, #e74c3c 0%, #ff6b81 50%, #e74c3c 100%) !important;
+  box-shadow: 0 2px 20px rgba(231, 76, 60, 0.3);
   border-bottom: none !important;
   position: sticky;
   top: 0;
@@ -48,11 +51,11 @@ body {
   color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* ---------- 首页大标题渐变文字 ---------- */
+/* ---------- 首页大标题 — 红色渐变文字 ---------- */
 .home-info .entry-header h1,
 .first-entry .entry-header h1,
 .first-entry .entry-header h2 {
-  background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #f5576c);
+  background: linear-gradient(135deg, #e74c3c, #ff6b81, #ff9a9e, #e74c3c);
   background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -65,23 +68,27 @@ body {
   50% { background-position: 100% 50%; }
 }
 
-/* ---------- 文章卡片柔和阴影与 hover 效果 ---------- */
+/* ---------- 文章卡片 — 温馨红色风格 ---------- */
 .post-entry {
-  background: var(--entry);
+  background: #ffffff;
   border-radius: 16px;
-  border: 1px solid var(--border);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(231, 76, 60, 0.15);
+  box-shadow: 0 4px 20px rgba(231, 76, 60, 0.06);
   transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   overflow: hidden;
 }
 
 .post-entry:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.15);
-  border-color: #667eea;
+  box-shadow: 0 12px 40px rgba(231, 76, 60, 0.15);
+  border-color: #e74c3c;
 }
 
-/* ---------- 分类页面网格布局 ---------- */
+.post-entry .entry-title a:hover {
+  color: #e74c3c !important;
+}
+
+/* ---------- 分类页面标签 — 红色渐变 ---------- */
 .terms-tags {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -99,25 +106,26 @@ body {
   align-items: center;
   justify-content: center;
   padding: 12px 16px;
-  background: var(--tertiary);
+  background: rgba(231, 76, 60, 0.08);
   border-radius: 12px;
   transition: all 0.3s ease;
   text-align: center;
   font-size: 0.95rem;
+  color: #c0392b;
 }
 
 .terms-tags a:hover {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #e74c3c, #ff6b81);
   color: #ffffff !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.3);
 }
 
-/* ---------- 归档页面优化 ---------- */
+/* ---------- 归档页面 — 红色竖线 ---------- */
 .archive-year {
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--primary);
+  color: #e74c3c;
   position: relative;
   padding-left: 1rem;
 }
@@ -129,13 +137,13 @@ body {
   top: 0.2em;
   bottom: 0.2em;
   width: 4px;
-  background: linear-gradient(180deg, #667eea, #764ba2);
+  background: linear-gradient(180deg, #e74c3c, #ff6b81);
   border-radius: 2px;
 }
 
 .archive-month-header {
   font-weight: 500;
-  color: var(--secondary);
+  color: #c0392b;
 }
 
 .archive-entry {
@@ -146,45 +154,95 @@ body {
 }
 
 .archive-entry:hover {
-  background: var(--tertiary);
+  background: rgba(231, 76, 60, 0.06);
 }
 
-.archive-entry-title {
-  font-weight: 500;
+/* ---------- 链接和按钮 ---------- */
+a {
+  color: #e74c3c;
 }
 
-/* ---------- 更美观的滚动条 ---------- */
+a:hover {
+  color: #c0392b;
+}
+
+/* ---------- 分隔线 — 爱心装饰 ---------- */
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e74c3c, #ff6b81, #e74c3c, transparent);
+  margin: 2rem 0;
+}
+
+/* ---------- 滚动条 — 红色 ---------- */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--theme);
+  background: #fef9f9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #667eea, #764ba2);
+  background: linear-gradient(180deg, #e74c3c, #ff6b81);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #764ba2, #667eea);
+  background: linear-gradient(180deg, #c0392b, #e74c3c);
 }
 
-/* Firefox 滚动条 */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #764ba2 var(--theme);
+  scrollbar-color: #e74c3c #fef9f9;
 }
 
-/* ---------- 代码块微调 ---------- */
+/* ---------- 代码块 ---------- */
 div.highlight {
   border-radius: 12px;
   overflow: hidden;
 }
 
-/* ---------- 响应式微调 ---------- */
+/* ---------- 页脚 — 爱心主题 ---------- */
+.footer {
+  color: #999;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* ---------- 浮动爱心背景装饰 ---------- */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(231, 76, 60, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(255, 107, 129, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(231, 76, 60, 0.02) 0%, transparent 60%);
+}
+
+/* ---------- 选中文字颜色 ---------- */
+::selection {
+  background: rgba(231, 76, 60, 0.2);
+  color: #c0392b;
+}
+
+/* ---------- 面包屑 — 红色 ---------- */
+.breadcrumbs {
+  color: #999;
+}
+
+.breadcrumbs a {
+  color: #e74c3c;
+}
+
+/* ---------- 响应式 ---------- */
 @media (max-width: 768px) {
   .terms-tags {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
