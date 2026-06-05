@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💕 我们的故事</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  background:linear-gradient(135deg,#fff9f7 0%,#fef0f5 15%,#f5f0ff 35%,#f0f5ff 55%,#fef0f5 80%,#fff9f7 100%);
+  min-height:100vh;color:#3a3a3a;overflow-x:hidden;position:relative
+}
+#particles-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+#bokeh-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
+#hearts-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:2}
+/* 顶部 */
+.header-bar{
+  position:relative;z-index:10;text-align:center;padding:48px 20px 20px;
+  background:linear-gradient(180deg,rgba(255,255,255,0.8) 0%,transparent 100%)
+}
+.header-bar h1{
+  font-size:32px;font-weight:900;letter-spacing:4px;
+  background:linear-gradient(135deg,#f5a0b8,#e88aa8,#89b8e1);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text
+}
+.header-bar .sub{font-size:14px;color:#d0aab8;margin-top:6px;letter-spacing:2px}
+.header-bar .quote-box{
+  max-width:640px;margin:16px auto 0;padding:16px 24px;
+  background:rgba(255,255,255,0.4);backdrop-filter:blur(20px);
+  border-radius:20px;border:1px solid rgba(255,255,255,0.6);
+  font-size:14px;color:#7a6a72;line-height:1.8;letter-spacing:1px
+}
+/* 故事卡片网格 */
+.stories-grid{
+  position:relative;z-index:10;max-width:900px;margin:20px auto 60px;padding:0 20px;display:flex;flex-direction:column;gap:20px
+}
+.story-card{
+  background:rgba(255,255,255,0.55);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border:1px solid rgba(255,255,255,0.7);border-radius:24px;padding:28px 30px;
+  box-shadow:0 6px 30px rgba(245,160,192,0.05);transition:all 0.4s ease;position:relative;overflow:hidden
+}
+.story-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,#f5a0b8,#89b8e1,#f5a0b8);opacity:0;transition:opacity 0.4s
+}
+.story-card:hover::before{opacity:1}
+.story-card:hover{transform:translateY(-3px);box-shadow:0 14px 50px rgba(245,160,192,0.12)}
+.story-card .story-number{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:36px;height:36px;border-radius:50%;
+  background:linear-gradient(135deg,#f5a0b8,#89b8e1);color:#fff;
+  font-size:14px;font-weight:700;margin-bottom:12px
+}
+.story-card h2{font-size:20px;font-weight:700;color:#e88aa8;margin-bottom:10px;line-height:1.5}
+.story-card p{font-size:15px;color:#5a5a6a;line-height:2;letter-spacing:0.5px;text-align:justify}
+.story-card p .highlight{color:#e88aa8;font-weight:500}
+.story-card .story-icon{font-size:24px;margin-bottom:8px}
+
+/* 置顶语句 */
+.pinned-section{
+  position:relative;z-index:10;max-width:900px;margin:0 auto 20px;padding:0 20px
+}
+.pinned-card{
+  background:linear-gradient(135deg,rgba(245,160,184,0.12),rgba(137,184,225,0.08));
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border:1px solid rgba(255,255,255,0.7);border-radius:24px;padding:32px 30px;text-align:center;
+  box-shadow:0 6px 30px rgba(245,160,192,0.05);position:relative;overflow:hidden
+}
+.pinned-card .pin-icon{font-size:20px;margin-bottom:8px}
+.pinned-card p{
+  font-size:17px;color:#6a5a62;line-height:2;letter-spacing:1.5px;
+  font-weight:500;max-width:700px;margin:0 auto
+}
+.pinned-card p .love-word{color:#e88aa8;font-weight:700}
+
+/* 页脚 */
+.footer-bar{
+  position:relative;z-index:10;text-align:center;padding:30px 20px 40px;
+  font-size:12px;color:#d0aab8;letter-spacing:1px
+}
+.footer-bar .footer-love{color:#f5a0b8;animation:pulse 2s infinite;display:inline-block}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+
+/* 响应式 */
+@media(max-width:768px){
+  .header-bar h1{font-size:26px}
+  .header-bar .quote-box{font-size:13px;padding:14px 16px}
+  .story-card{padding:20px 18px}
+  .story-card h2{font-size:17px}
+  .story-card p{font-size:14px;line-height:1.9}
+  .pinned-card p{font-size:15px}
+}
+</style>
+</head>
+<body>
+
+<canvas id="particles-canvas"></canvas>
+<canvas id="bokeh-canvas"></canvas>
+<canvas id="hearts-canvas"></canvas>
+
+<!-- 标题 -->
+<header class="header-bar">
+  <h1>💕 属于我们的故事</h1>
+  <p class="sub">那些聊天记录里的细碎温暖，都值得被记住 ✨</p>
+  <div class="quote-box">
+    八篇小故事，<br>
+    取自日常聊天的角角落落——<br>
+    没有华丽的辞藻，只有真实的惦记与行动。<br>
+    每一件小事，都是藏在岁月里的 <span style="color:#e88aa8;font-weight:600">满满偏爱</span>。
+  </div>
+</header>
+
+<!-- 置顶语句 -->
+<div class="pinned-section">
+  <div class="pinned-card fade-in">
+    <div class="pin-icon">💌</div>
+    <p>
+      <span class="love-word">三餐烟火，岁岁风雪，</span><br>
+      <span class="love-word">所有不起眼的小事，</span><br>
+      <span class="love-word">都是藏在岁月里满满的偏爱。</span>
+    </p>
+  </div>
+</div>
+
+<!-- 故事列表 -->
+<div class="stories-grid">
+
+  <!-- 故事1 -->
+  <div class="story-card fade-in">
+    <div class="story-number">1</div>
+    <div class="story-icon">🎃</div>
+    <h2>万圣提前筹备穿搭，满心筹划初次约会</h2>
+    <p>
+      万圣前夕早早敲定整套穿搭，特意挑选哈利波特主题服饰与配套小配饰，算好通勤路程，规划地铁汇合地点，细致敲定碰面时间。满心期待节日碰面，把一场普通的节日出行，提前细细规划，从服饰到行程面面俱到，用心铺垫第一次线下约会的仪式感。
+    </p>
+  </div>
+
+  <!-- 故事2 -->
+  <div class="story-card fade-in">
+    <div class="story-number">2</div>
+    <div class="story-icon">🧣</div>
+    <h2>秋冬换季囤好物，悄悄补齐生活刚需</h2>
+    <p>
+      气温逐步走低，悄悄记下日常所需，分批次添置整套厚薄合适的保暖内衣、多包常用洗护棉柔巾。留心日常饮食偏好，牢记不爱榴莲、偏爱鲜果，多次悄悄配送哈密瓜、千禧果到宿舍楼下。留意过冬防寒用品，手套、暖贴、新款羽绒服逐一挑选，羽绒服提前下单预留，细心核对尺码版型，换季来临之前，把一整个秋冬的保暖好物慢慢备齐。随口说起大衣配长靴的穿搭想法，妥帖记下，约定来年气温回升，陪着换上心仪穿搭出门。
+    </p>
+  </div>
+
+  <!-- 故事4 -->
+  <div class="story-card fade-in">
+    <div class="story-number">4</div>
+    <div class="story-icon">💊</div>
+    <h2>牵挂身体健康，牢记体检与疫苗事项</h2>
+    <p>
+      偶然聊起疫苗新规，认真查阅完整接种周期，逐条记下三针接种时间节点，反复提醒适龄及时安排。日常留意生理期作息，降温受凉流涕、身体酸痛阶段，每日叮嘱忌口生冷、按时休养。依旧不忘追问三餐，挂念日常冷暖，病痛时刻优先惦记对方身体状况。
+    </p>
+  </div>
+
+  <!-- 故事5 -->
+  <div class="story-card fade-in">
+    <div class="story-number">5</div>
+    <div class="story-icon">⏰</div>
+    <h2>错开作息互相包容，迁就学业与职场忙碌</h2>
+    <p>
+      一边被全天满课、晚间固定晚自习、定期足球训练、社团视频剪辑、期末课题汇报填满日程，临时训练、突发课业时常打乱约会计划。另一边常年固定上班作息，偶尔临时加班、外出应酬，两场生活节奏完全错开。多次约好的聚餐、逛街临时作废，产生误会争执过后，冷静主动低头和解，数日无法见面的日子，每晚忙完工作便守着消息，等候课业结束，熬至深夜互道晚安，全盘接纳各自身不由己的忙碌。
+    </p>
+  </div>
+
+  <!-- 故事6 -->
+  <div class="story-card fade-in">
+    <div class="story-number">6</div>
+    <div class="story-icon">🎁</div>
+    <h2>随口小事全记牢，细碎心愿逐一落地实现</h2>
+    <p>
+      书包边角磨损破损，闲聊说起想要换新，逛街途中悄悄选购适配双肩包；吃到舍友外地寄来的特色鲜果，爱吃的口味被默默记下；闲谈想要验光测度数，特意敲定专业配镜商圈，约定空闲结伴前往。提起想看院线新电影，即便需要腾出半天陪同长辈复诊，主动调整前后行程，挤出上午空档安排观影；随口提议往后相约恐怖片，早早列入未来出行清单，所有无心提起的细碎期许，从不画空泛诺言，一件件落地兑现。
+    </p>
+  </div>
+
+  <!-- 故事7 -->
+  <div class="story-card fade-in">
+    <div class="story-number">7</div>
+    <div class="story-icon">🍚</div>
+    <h2>惦记三餐温饱，琐碎日常藏满细碎关心</h2>
+    <p>
+      课业紧凑经常错过饭点，没有胃口随意凑合吃饭，一遍遍叮嘱规律用餐，督促按时进食，看着吃光饭菜才安心。分享食堂红烧排骨、番茄炒蛋等爱吃菜品，遇到合口味的烤鸭，主动提出打包分装送到手边。日常留意伙食好坏，饭菜不合胃口时，提议外出觅食改善伙食，把一日三餐的温饱，放在日常琐碎的叮嘱之中。
+    </p>
+  </div>
+
+  <!-- 故事8 -->
+  <div class="story-card fade-in">
+    <div class="story-number">8</div>
+    <div class="story-icon">🌙</div>
+    <h2>深夜碎碎念，平淡废话积攒长久爱意</h2>
+    <p>
+      结束一天忙碌后，睡前固定闲聊，分享当日通勤堵车、校园趣事、下雪见闻、工作琐事。应酬微醺的夜晚，卸下拘谨直白表露心意，无论清醒或是酒后，惦念始终如一。闲暇探讨穿搭、护肤、日常小常识，哪怕无关紧要的闲聊废话也耐心回应，在日复一日的琐碎闲谈里，慢慢积攒独有的温柔与偏爱。
+    </p>
+  </div>
+
+</div>
+
+<!-- 页脚 -->
+<footer class="footer-bar">
+  <p>
+    <span class="footer-love">💕</span> 每一件小事，都是爱 <span class="footer-love">💕</span><br>
+    © 2026 我们的小天地
+  </p>
+</footer>
+
+<script>
+// ===== 滚动动画 =====
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, {threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el => {observer.observe(el); el.style.opacity='0'; el.style.transform='translateY(20px)'; el.style.transition='opacity 0.6s ease,transform 0.6s ease'});
+document.querySelectorAll('.fade-in.visible').forEach(el => {el.style.opacity='1'; el.style.transform='translateY(0)'});
+const obs2 = new IntersectionObserver(entries => {
+  entries.forEach(e => {if(e.isIntersecting){e.target.style.opacity='1'; e.target.style.transform='translateY(0)'}});
+}, {threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el => obs2.observe(el));
+
+// ===== 星空粒子 =====
+(function(){
+  const c = document.getElementById('particles-canvas');
+  const ctx = c.getContext('2d');
+  let w, h, p = [];
+  function r(){w=c.width=window.innerWidth; h=c.height=window.innerHeight}
+  r(); window.addEventListener('resize',r);
+  for(let i=0;i<130;i++) p.push({x:Math.random()*w, y:Math.random()*h, r:Math.random()*2.2+0.3, vx:(Math.random()-0.5)*0.12, vy:(Math.random()-0.5)*0.12-0.03, a:Math.random()*0.6+0.2, o:Math.random()*0.5+0.3});
+  function d(){
+    ctx.clearRect(0,0,w,h);
+    p.forEach(s => {
+      s.x+=s.vx;s.y+=s.vy;
+      if(s.x<0)s.x=w;if(s.x>w)s.x=0;if(s.y<0)s.y=h;if(s.y>h)s.y=0;
+      const b=0.5+Math.sin(Date.now()*0.002+s.o)*0.4;
+      ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(255,255,255,${b*s.a})`;ctx.fill();
+      ctx.beginPath();ctx.arc(s.x,s.y,s.r*3,0,Math.PI*2);
+      ctx.fillStyle=`rgba(255,220,240,${b*s.a*0.12})`;ctx.fill();
+    });
+    requestAnimationFrame(d);
+  }
+  d();
+})();
+
+// ===== 光斑 =====
+(function(){
+  const c=document.getElementById('bokeh-canvas'),ctx=c.getContext('2d');let w,h,s=[];
+  function r(){w=c.width=window.innerWidth;h=c.height=window.innerHeight}
+  r();window.addEventListener('resize',r);
+  const cl=['255,200,220','200,220,255','255,220,200','220,240,255','255,200,230'];
+  for(let i=0;i<35;i++) s.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*50+18,vx:(Math.random()-0.5)*0.06,vy:-0.015-Math.random()*0.03,color:cl[Math.floor(Math.random()*cl.length)],a:Math.random()*0.1+0.04,ph:Math.random()*Math.PI*2,sp:0.001+Math.random()*0.002});
+  function d(){
+    ctx.clearRect(0,0,w,h);
+    s.forEach(t => {
+      t.x+=t.vx;t.y+=t.vy;
+      if(t.y<-t.r){t.y=h+t.r;t.x=Math.random()*w}
+      if(t.x<-t.r)t.x=w+t.r;if(t.x>w+t.r)t.x=-t.r;
+      const pu=0.5+Math.sin(Date.now()*t.sp+t.ph)*0.5,ca=t.a*pu;
+      for(let j=3;j>=0;j--){const r2=t.r*(1+j*0.6);ctx.beginPath();ctx.arc(t.x,t.y,r2,0,Math.PI*2);ctx.fillStyle=`rgba(${t.color},${ca*(0.35-j*0.06)})`;ctx.fill()}
+    });
+    requestAnimationFrame(d);
+  }
+  d();
+})();
+
+// ===== 爱心 =====
+(function(){
+  const c=document.getElementById('hearts-canvas'),ctx=c.getContext('2d');let w,h,hrt=[];
+  function r(){w=c.width=window.innerWidth;h=c.height=window.innerHeight}
+  r();window.addEventListener('resize',r);
+  function dh(x,y,s,cl,al){ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.beginPath();ctx.moveTo(0,-4);ctx.bezierCurveTo(-6,-10,-14,-4,0,6);ctx.bezierCurveTo(14,-4,6,-10,0,-4);ctx.fillStyle=`rgba(${cl},${al*0.3})`;ctx.fill();ctx.restore()}
+  for(let i=0;i<12;i++) hrt.push({x:Math.random()*w,y:Math.random()*h,s:Math.random()*0.5+0.12,vy:-0.1-Math.random()*0.16,vx:(Math.random()-0.5)*0.08,color:['255,150,180','255,180,200','200,180,255','255,200,220'][Math.floor(Math.random()*4)],a:Math.random()*0.2+0.08,ph:Math.random()*Math.PI*2});
+  function d(){
+    ctx.clearRect(0,0,w,h);
+    hrt.forEach(t => {
+      t.x+=t.vx+Math.sin(Date.now()*0.001+t.ph)*0.08;t.y+=t.vy;
+      if(t.y<-30){t.y=h+30;t.x=Math.random()*w}
+      if(t.x<-30)t.x=w+30;if(t.x>w+30)t.x=-30;
+      const pu=0.6+Math.sin(Date.now()*0.0015+t.ph)*0.4;dh(t.x,t.y,t.s*pu,t.color,t.a);
+    });
+    requestAnimationFrame(d);
+  }
+  d();
+})();
+</script>
+</body>
+</html>
