@@ -13,11 +13,9 @@ body{
   background:linear-gradient(135deg,#fff9f7 0%,#fef0f5 15%,#f5f0ff 35%,#f0f5ff 55%,#fef0f5 80%,#fff9f7 100%);
   min-height:100vh;color:#3a3a3a;overflow-x:hidden;position:relative
 }
-/* ===== 粒子画布 ===== */
 #particles-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
 #bokeh-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
 #hearts-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:2}
-/* ===== 顶部标题栏 ===== */
 .header-bar{
   position:fixed;top:0;left:0;right:0;z-index:100;
   background:rgba(255,255,255,0.72);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
@@ -31,11 +29,9 @@ body{
   background-clip:text;letter-spacing:3px
 }
 .header-bar p{font-size:13px;color:#d0aab8;margin-top:2px;letter-spacing:1px}
-/* ===== 整体布局 ===== */
 .app-wrapper{
   display:flex;max-width:1260px;margin:90px auto 60px;padding:0 20px;gap:24px;position:relative;z-index:10
 }
-/* ===== 左侧栏 ===== */
 .sidebar-left{
   width:220px;flex-shrink:0;position:sticky;top:90px;align-self:flex-start;max-height:calc(100vh - 110px);overflow-y:auto
 }
@@ -48,7 +44,6 @@ body{
   margin-bottom:18px;transition:all 0.3s ease
 }
 .frosted-card:hover{box-shadow:0 12px 50px rgba(245,160,192,0.12),0 2px 10px rgba(255,255,255,0.5)}
-/* 头像区域 */
 .avatar-section{text-align:center;padding:10px 0 6px}
 .dual-avatars{display:flex;justify-content:center;align-items:center;gap:0;margin-bottom:12px}
 .avatar-ring{width:56px;height:56px;border-radius:50%;padding:3px;
@@ -63,7 +58,6 @@ body{
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
 .avatar-section .nickname{font-size:15px;font-weight:600;color:#e88aa8;margin-bottom:2px}
 .avatar-section .subtag{font-size:11px;color:#d0aab8}
-/* 恋爱计时 */
 .countdown-box{text-align:center;padding:16px 12px}
 .countdown-box h3{font-size:13px;color:#e88aa8;font-weight:500;margin-bottom:4px;letter-spacing:1px}
 .countdown-box .day-number{
@@ -73,7 +67,6 @@ body{
 }
 .countdown-box .day-label{font-size:13px;color:#d0aab8;margin-top:2px;font-weight:500;letter-spacing:2px}
 .countdown-box .since-date{font-size:11px;color:#d5b5c5;margin-top:6px;letter-spacing:0.5px}
-/* 分类菜单 */
 .category-menu h3{font-size:13px;color:#e88aa8;font-weight:500;margin-bottom:10px;letter-spacing:1px}
 .cat-btn{
   display:flex;align-items:center;gap:8px;width:100%;padding:9px 14px;margin-bottom:6px;
@@ -86,17 +79,7 @@ body{
 }
 .cat-btn .cat-icon{font-size:16px}
 .cat-btn .cat-count{font-size:11px;color:#d0aab8;margin-left:auto}
-.cat-btn.active{
-  background:linear-gradient(135deg,rgba(245,160,184,0.25),rgba(137,184,225,0.2));
-  font-weight:600;color:#e88aa8
-}
-/* ===== 中间内容区 ===== */
 .content-main{flex:1;min-width:0}
-.section-title{
-  font-size:16px;font-weight:600;color:#e88aa8;margin-bottom:14px;display:flex;align-items:center;gap:8px
-}
-.section-title .title-line{flex:1;height:1px;background:linear-gradient(90deg,rgba(245,160,184,0.4),transparent)}
-/* 欢迎卡片 */
 .welcome-card{
   background:linear-gradient(135deg,rgba(255,255,255,0.6),rgba(240,247,255,0.5));
   backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
@@ -106,35 +89,23 @@ body{
 .welcome-card h2{font-size:22px;font-weight:700;color:#e88aa8;margin-bottom:10px}
 .welcome-card p{font-size:14px;color:#5a5a6a;line-height:1.8}
 .welcome-card .highlight-word{color:#e88aa8;font-weight:500}
-/* 内容卡片 */
-.post-card{
-  background:rgba(255,255,255,0.55);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
-  border:1px solid rgba(255,255,255,0.7);border-radius:20px;padding:22px 24px;margin-bottom:16px;
-  box-shadow:0 6px 30px rgba(245,160,192,0.05);transition:all 0.4s ease;position:relative;overflow:hidden
+.stories-link-card{
+  background:linear-gradient(135deg,rgba(245,160,184,0.1),rgba(137,184,225,0.08));
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border:1px solid rgba(255,255,255,0.7);border-radius:20px;padding:32px 24px;margin-bottom:16px;
+  text-align:center;cursor:pointer;transition:all 0.4s ease;position:relative;overflow:hidden;
+  text-decoration:none;display:block
 }
-.post-card::before{
+.stories-link-card::before{
   content:'';position:absolute;top:0;left:0;right:0;height:3px;
   background:linear-gradient(90deg,#f5a0b8,#89b8e1,#f5a0b8);opacity:0;transition:opacity 0.4s
 }
-.post-card:hover{transform:translateY(-3px);box-shadow:0 14px 50px rgba(245,160,192,0.12)}
-.post-card:hover::before{opacity:1}
-.post-card .post-category{
-  display:inline-block;padding:3px 12px;border-radius:20px;font-size:11px;font-weight:500;
-  background:rgba(245,160,184,0.12);color:#e88aa8;margin-bottom:10px
-}
-.post-card h3{font-size:18px;font-weight:600;color:#3a3a3a;margin-bottom:8px;line-height:1.5}
-.post-card .post-meta{font-size:12px;color:#b5a5ad;margin-bottom:10px;display:flex;align-items:center;gap:10px}
-.post-card .post-excerpt{font-size:15px;color:#5a5a6a;line-height:1.8;margin-bottom:12px}
-.post-card .post-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
-.post-card .post-tags span{
-  padding:2px 10px;border-radius:12px;font-size:11px;background:rgba(137,184,225,0.1);color:#7a9ab8
-}
-.post-card .read-more{
-  display:inline-flex;align-items:center;gap:4px;font-size:13px;color:#89b8e1;font-weight:500;
-  text-decoration:none;transition:gap 0.3s
-}
-.post-card .read-more:hover{gap:8px}
-/* ===== 右侧栏 ===== */
+.stories-link-card:hover::before{opacity:1}
+.stories-link-card:hover{transform:translateY(-3px);box-shadow:0 14px 50px rgba(245,160,192,0.15)}
+.stories-link-card .big-icon{font-size:40px;margin-bottom:8px}
+.stories-link-card h3{font-size:20px;font-weight:700;color:#e88aa8;margin-bottom:6px}
+.stories-link-card p{font-size:13px;color:#d0aab8;letter-spacing:1px}
+.stories-link-card .sparkle{animation:pulse 2s infinite;display:inline-block}
 .sidebar-right{
   width:260px;flex-shrink:0;position:sticky;top:90px;align-self:flex-start;max-height:calc(100vh - 110px);overflow-y:auto
 }
@@ -151,7 +122,6 @@ body{
 .profile-card .profile-bio{font-size:12.5px;color:#5a5a6a;line-height:1.7;padding:0 2px;text-align:left}
 .profile-card .profile-bio .bio-label{color:#e88aa8;font-weight:600;font-size:12px}
 .profile-card .profile-bio .bio-divider{height:1px;background:rgba(245,160,184,0.1);margin:6px 0}
-/* 留言区 */
 .message-box .msg-item{
   padding:10px 0;border-bottom:1px solid rgba(245,160,184,0.08);font-size:13px;color:#5a5a6a;line-height:1.6
 }
@@ -168,7 +138,6 @@ body{
   color:#fff;font-size:12px;cursor:pointer;transition:all 0.3s;font-family:inherit;font-weight:500
 }
 .message-box .msg-input-group button:hover{transform:scale(1.05);box-shadow:0 4px 15px rgba(245,160,184,0.3)}
-/* ===== 页脚 ===== */
 .footer-bar{
   position:relative;z-index:10;text-align:center;padding:30px 20px 24px;
   font-size:12px;color:#d0aab8;letter-spacing:1px
@@ -176,7 +145,6 @@ body{
 .footer-bar .footer-love{color:#f5a0b8;animation:pulse 2s infinite;display:inline-block}
 .footer-bar a{color:#b5a5ad;text-decoration:none;transition:color 0.3s}
 .footer-bar a:hover{color:#e88aa8}
-/* ===== 响应式 ===== */
 @media(max-width:1024px){
   .sidebar-right{display:none}
   .app-wrapper{max-width:900px}
@@ -187,8 +155,6 @@ body{
   .header-bar h1{font-size:18px}
   .welcome-card{padding:20px 16px}
   .welcome-card h2{font-size:18px}
-  .post-card{padding:18px 16px}
-  .post-card h3{font-size:16px}
   .mobile-menu-btn{
     display:flex!important;position:fixed;bottom:24px;right:24px;z-index:200;
     width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#f5a0b8,#89b8e1);
@@ -214,18 +180,15 @@ body{
 </head>
 <body>
 
-<!-- 粒子画布 -->
 <canvas id="particles-canvas"></canvas>
 <canvas id="bokeh-canvas"></canvas>
 <canvas id="hearts-canvas"></canvas>
 
-<!-- 顶部标题栏 -->
 <header class="header-bar">
   <h1>💕 我们的小天地</h1>
   <p>记录属于两个人的甜蜜时光 ✨</p>
 </header>
 
-<!-- 移动端菜单 -->
 <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单">☰</button>
 <div class="mobile-drawer" id="mobileDrawer">
   <div class="drawer-content" onclick="event.stopPropagation()">
@@ -239,36 +202,25 @@ body{
       <div style="font-size:32px;font-weight:900;background:linear-gradient(135deg,#f5a0b8,#e88aa8,#d98ab8);-webkit-background-clip:text;-webkit-text-fill-color:transparent" id="mobileDays"></div>
       <div style="font-size:12px;color:#d0aab8;font-weight:500;letter-spacing:2px">在一起的第 天</div>
     </div>
-    <h3 style="font-size:13px;color:#e88aa8;margin-bottom:10px;letter-spacing:1px">📂 分类浏览</h3>
-    <a href="/categories/美食分享/" class="cat-btn"><span class="cat-icon">🍃</span> 美食分享 <span class="cat-count">1</span></a>
-    <a href="/categories/旅行打卡/" class="cat-btn"><span class="cat-icon">🏮</span> 旅行打卡 <span class="cat-count">1</span></a>
-    <a href="/categories/日常vlog/" class="cat-btn"><span class="cat-icon">📳</span> 日常Vlog <span class="cat-count">1</span></a>
-    <a href="/about/" class="cat-btn" style="margin-top:6px"><span class="cat-icon">💌</span> 关于我们</a>
+    <h3 style="font-size:13px;color:#e88aa8;margin-bottom:10px;letter-spacing:1px">📂 逛逛</h3>
+    <a href="/stories.html" class="cat-btn"><span class="cat-icon">📖</span> 小故事 <span class="cat-count">8</span></a>
+    <a href="/about/" class="cat-btn"><span class="cat-icon">💌</span> 关于我们</a>
   </div>
 </div>
 
 <div class="app-wrapper">
 
-  <!-- ===== 左侧栏 ===== -->
   <aside class="sidebar-left">
-    <!-- 双人头像 -->
     <div class="frosted-card avatar-section">
       <div class="dual-avatars">
-        <div class="avatar-ring">
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Ccircle cx='28' cy='28' r='28' fill='%23f5a0b8'/%3E%3Ctext x='28' y='34' text-anchor='middle' font-size='22' fill='white'%3E%F0%9F%91%A9%3C/text%3E%3C/svg%3E" alt="她">
-          <div class="love-badge">❤</div>
-        </div>
+        <div class="avatar-ring"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Ccircle cx='28' cy='28' r='28' fill='%23f5a0b8'/%3E%3Ctext x='28' y='34' text-anchor='middle' font-size='22' fill='white'%3E%F0%9F%91%A9%3C/text%3E%3C/svg%3E" alt="她"><div class="love-badge">❤</div></div>
         <span class="love-connector">💗</span>
-        <div class="avatar-ring">
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Ccircle cx='28' cy='28' r='28' fill='%2389b8e1'/%3E%3Ctext x='28' y='34' text-anchor='middle' font-size='22' fill='white'%3E%F0%9F%91%A8%3C/text%3E%3C/svg%3E" alt="他">
-          <div class="love-badge">❤</div>
-        </div>
+        <div class="avatar-ring"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Ccircle cx='28' cy='28' r='28' fill='%2389b8e1'/%3E%3Ctext x='28' y='34' text-anchor='middle' font-size='22' fill='white'%3E%F0%9F%91%A8%3C/text%3E%3C/svg%3E" alt="他"><div class="love-badge">❤</div></div>
       </div>
       <div class="nickname">✨ 我们</div>
       <div class="subtag">· 记录每一刻温暖 ·</div>
     </div>
 
-    <!-- 恋爱计时（起始日：9月8日） -->
     <div class="frosted-card countdown-box">
       <h3>💫 在一起的第</h3>
       <div class="day-number" id="loveDays">--</div>
@@ -276,20 +228,15 @@ body{
       <div class="since-date">从 2025.09.08 开始 💕</div>
     </div>
 
-    <!-- 分类菜单 -->
     <div class="frosted-card category-menu">
-      <h3>📂 分类浏览</h3>
-      <a href="/categories/美食分享/" class="cat-btn"><span class="cat-icon">🍃</span> 美食分享 <span class="cat-count">1</span></a>
-      <a href="/categories/旅行打卡/" class="cat-btn"><span class="cat-icon">🏮</span> 旅行打卡 <span class="cat-count">1</span></a>
-      <a href="/categories/日常vlog/" class="cat-btn"><span class="cat-icon">📳</span> 日常Vlog <span class="cat-count">1</span></a>
-      <a href="/about/" class="cat-btn" style="margin-top:8px"><span class="cat-icon">💌</span> 关于我们</a>
+      <h3>📂 逛逛</h3>
+      <a href="/stories.html" class="cat-btn"><span class="cat-icon">📖</span> 小故事 <span class="cat-count">8</span></a>
+      <a href="/about/" class="cat-btn"><span class="cat-icon">💌</span> 关于我们</a>
     </div>
   </aside>
 
-  <!-- ===== 中间内容区 ===== -->
   <main class="content-main">
 
-    <!-- 欢迎语 -->
     <div class="welcome-card fade-in">
       <h2>🌸 欢迎来到我们的小天地</h2>
       <p>
@@ -300,79 +247,16 @@ body{
       </p>
     </div>
 
-    <!-- 美食记录 -->
-    <div class="section-title fade-in"><span>🍃 美食分享</span><span class="title-line"></span></div>
-    <div class="post-card fade-in">
-      <div class="post-category">🍃 美食分享</div>
-      <h3>我的第一篇美食记录：家常红烧肉</h3>
-      <div class="post-meta">📅 2026年6月3日 ｜ 📂 厨房日记</div>
-      <div class="post-content" style="font-size:15px;color:#5a5a6a;line-height:1.8;margin-bottom:12px">
-        <p>🍖 今天尝试做了红烧肉！周末在家，决定挑战一下经典的家常菜——红烧肉。</p>
-        <p style="margin-top:8px"><strong>食材准备：</strong>五花肉 500g、冰糖 30g、生抽老抽各2勺、料酒 1勺、八角 2个、桂皮 1小段、葱姜蒜适量</p>
-        <p style="margin-top:8px"><strong>制作步骤：</strong>五花肉切块焯水 → 小火炒糖色 → 下肉翻炒裹色 → 加调料 → 焖煮45分钟 → 大火收汁</p>
-        <p style="margin-top:8px">出锅的时候香气四溢！肥而不腻，入口即化。虽然第一次做糖色有点手忙脚乱，但最终成品还是很满意的 😋</p>
-        <p style="margin-top:4px;color:#d0aab8;font-size:13px">小贴士：炒糖色是关键，火候要小要有耐心！</p>
-      </div>
-      <div class="post-tags">
-        <span># 美食</span><span># 家常菜</span><span># 红烧肉</span>
-      </div>
-      <a class="read-more" href="/food/first-food-post/">阅读全文 →</a>
-    </div>
-
-    <!-- 旅行记录 -->
-    <div class="section-title fade-in"><span>🏮 旅行打卡</span><span class="title-line"></span></div>
-    <div class="post-card fade-in">
-      <div class="post-category">🏮 旅行打卡</div>
-      <h3>城市漫步：周末的公园时光</h3>
-      <div class="post-meta">📅 2026年6月2日</div>
-      <div class="post-content" style="font-size:15px;color:#5a5a6a;line-height:1.8;margin-bottom:12px">
-        <p>🌳 周末不想远行？家门口的公园也很美</p>
-        <p style="margin-top:8px">今天天气特别好，蓝天白云，温度刚好。决定不去远方，就在家附近的公园走走。</p>
-        <p style="margin-top:8px"><strong>路线：</strong>从家出发 → 经过老街 → 穿过梧桐大道 → 到达中心公园 → 湖边散步 → 回程</p>
-        <p style="margin-top:8px"><strong>发现的惊喜：</strong></p>
-        <p>一家开了20年的老咖啡店，拿铁意外的好喝 ☕<br>公园里有人在练习萨克斯，旋律很美 🎷<br>夕阳下的湖面波光粼粼，拍了几张很满意的照片 📸</p>
-        <p style="margin-top:8px">有时候不需要精心策划的旅行，随意的漫步也能发现生活的美好 ✨</p>
-      </div>
-      <div class="post-tags">
-        <span># 城市</span><span># 公园</span><span># 周末</span>
-      </div>
-      <a class="read-more" href="/travel/weekend-park-walk/">阅读全文 →</a>
-    </div>
-
-    <!-- Vlog记录 -->
-    <div class="section-title fade-in"><span>📳 日常Vlog</span><span class="title-line"></span></div>
-    <div class="post-card fade-in">
-      <div class="post-category">📳 日常Vlog</div>
-      <h3>Vlog #001：一个普通周六的日常记录</h3>
-      <div class="post-meta">📅 2026年6月1日 ｜ 📂 Vlog</div>
-      <div class="post-content" style="font-size:15px;color:#5a5a6a;line-height:1.8;margin-bottom:12px">
-        <p>📹 Vlog 第一集：我的周六是怎么过的</p>
-        <p style="margin-top:8px">终于鼓起勇气开始拍 Vlog 了！这是第一集，记录了一个普普通通但充实的周六。</p>
-        <p style="margin-top:8px"><strong>时间线：</strong></p>
-        <p>
-          08:00 起床，一杯黑咖啡 ☕<br>
-          09:00 整理房间，断舍离<br>
-          11:00 去超市采购本周食材<br>
-          12:30 午餐：做了个简易意面<br>
-          14:00 下午茶+看书<br>
-          16:00 出门散步 + 拍素材<br>
-          18:00 晚餐时间<br>
-          20:00 剪辑视频<br>
-          23:00 睡觉 💤
-        </p>
-        <p style="margin-top:8px">拍 Vlog 比想象中难很多，尤其是对着镜头说话还是会觉得尴尬。但回看素材的时候，发现记录下来的瞬间真的很珍贵。继续加油吧！💪</p>
-      </div>
-      <div class="post-tags">
-        <span># Vlog</span><span># 日常</span><span># 记录</span>
-      </div>
-      <a class="read-more" href="/vlog/vlog-001-saturday/">阅读全文 →</a>
-    </div>
+    <a href="/stories.html" class="stories-link-card fade-in">
+      <div class="big-icon">📖</div>
+      <h3>我们的故事 <span class="sparkle">✨</span></h3>
+      <p>8 篇暖心小故事 · 取自聊天记录的点点滴滴</p>
+      <p style="margin-top:8px;font-size:12px;color:#c0a0b0">点击阅读全部故事 →</p>
+    </a>
 
   </main>
 
-  <!-- ===== 右侧栏 ===== -->
   <aside class="sidebar-right">
-    <!-- 个人简介卡片 -->
     <div class="frosted-card profile-card">
       <div class="big-avatar">
         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='40' fill='url(%23g)'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f5a0b8'/%3E%3Cstop offset='100%25' style='stop-color:%2389b8e1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ctext x='40' y='46' text-anchor='middle' font-size='30' fill='white'%3E%F0%9F%92%91%3C/text%3E%3C/svg%3E" alt="我们">
@@ -382,37 +266,27 @@ body{
       <div class="profile-bio">
         <p><span class="bio-label">📋 身份证</span><br>441224200504056827</p>
         <div class="bio-divider"></div>
-        <p><span class="bio-label">💕 相识相恋</span><br>
-        七夕结缘 ｜ 9月8日正式在一起<br>10月8日关系转正</p>
+        <p><span class="bio-label">💕 相识相恋</span><br>七夕结缘 ｜ 9月8日正式在一起<br>10月8日关系转正</p>
         <div class="bio-divider"></div>
         <p><span class="bio-label">🎓 院校</span><br>生命院</p>
         <div class="bio-divider"></div>
         <p><span class="bio-label">🚫 忌口</span><br>不吃榴莲</p>
         <div class="bio-divider"></div>
-        <p><span class="bio-label">💝 恋爱小事</span><br>
-        12月6日：中街负一楼一起吃生煎包<br>
-        12月13日：大东副食告知对方桃子、芒果过敏</p>
+        <p><span class="bio-label">💝 恋爱小事</span><br>12月6日：中街负一楼一起吃生煎包<br>12月13日：大东副食告知对方桃子、芒果过敏</p>
         <div class="bio-divider"></div>
-        <p><span class="bio-label">🥤 常驻爱喝饮品</span><br>
-        沪上阿姨果蔬茶 · 蜜雪冰城桑葚莓莓<br>
-        古茗牛乳茶 · 瑞幸拿铁 · 茶百道果茶</p>
+        <p><span class="bio-label">🥤 常驻爱喝饮品</span><br>沪上阿姨果蔬茶 · 蜜雪冰城桑葚莓莓<br>古茗牛乳茶 · 瑞幸拿铁 · 茶百道果茶</p>
       </div>
     </div>
 
-    <!-- 甜蜜留言板 -->
     <div class="frosted-card message-box">
       <h3 style="font-size:13px;color:#e88aa8;font-weight:500;margin-bottom:10px;letter-spacing:1px">💬 甜蜜留言板</h3>
       <div class="msg-item">
-        🌸 今天一起做的红烧肉太好吃了！
-        <span class="msg-date">2026.06.03</span>
+        每一件小事都是满满偏爱 💕
+        <span class="msg-date">2026.06.05</span>
       </div>
       <div class="msg-item">
-        🎵 公园里的萨克斯风真好听~
-        <span class="msg-date">2026.06.02</span>
-      </div>
-      <div class="msg-item">
-        📹 第一个Vlog完成！开始记录我们的生活啦
-        <span class="msg-date">2026.06.01</span>
+        故事页面太好哭了 😭✨
+        <span class="msg-date">2026.06.05</span>
       </div>
       <div class="msg-input-group">
         <input type="text" placeholder="留个言吧 💕" id="msgInput">
@@ -423,7 +297,6 @@ body{
 
 </div>
 
-<!-- 页脚 -->
 <footer class="footer-bar">
   <p>
     <span class="footer-love">💕</span> Made with Love
@@ -433,162 +306,35 @@ body{
 </footer>
 
 <script>
-// ===== 恋爱计时器（起始日 2025年9月8日） =====
 (function(){
-  const startDate = new Date('2025-09-08');
-  const today = new Date();
-  const diffTime = Math.abs(today - startDate);
-  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-  document.getElementById('loveDays').textContent = diffDays;
+  const start = new Date('2025-09-08');
+  const days = Math.floor(Math.abs(new Date() - start) / 86400000);
+  document.getElementById('loveDays').textContent = days;
   const m = document.getElementById('mobileDays');
-  if(m) m.textContent = diffDays;
+  if(m) m.textContent = days;
 })();
-
-// ===== 留言板 =====
 function addMessage(){
-  const input = document.getElementById('msgInput');
-  const text = input.value.trim();
-  if(!text) return;
-  const box = document.querySelector('.message-box');
-  const group = box.querySelector('.msg-input-group');
-  const item = document.createElement('div');
-  item.className = 'msg-item';
-  const now = new Date();
-  const ds = now.getFullYear()+'.'+String(now.getMonth()+1).padStart(2,'0')+'.'+String(now.getDate()).padStart(2,'0');
-  item.innerHTML = text+' <span class="msg-date">'+ds+'</span>';
-  box.insertBefore(item, group);
-  input.value = '';
+  const i = document.getElementById('msgInput'), t = i.value.trim();
+  if(!t) return;
+  const d = new Date(), s = d.getFullYear()+'.'+String(d.getMonth()+1).padStart(2,'0')+'.'+String(d.getDate()).padStart(2,'0');
+  const item = document.createElement('div'); item.className = 'msg-item';
+  item.innerHTML = t+' <span class="msg-date">'+s+'</span>';
+  document.querySelector('.message-box').insertBefore(item, document.querySelector('.message-box .msg-input-group'));
+  i.value = '';
 }
+const obs = new IntersectionObserver(e => {e.forEach(i => {if(i.isIntersecting) i.target.classList.add('visible')})}, {threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+document.getElementById('mobileMenuBtn')?.addEventListener('click',() => document.getElementById('mobileDrawer')?.classList.toggle('open'));
+document.getElementById('mobileDrawer')?.addEventListener('click',() => document.getElementById('mobileDrawer')?.classList.remove('open'));
 
-// ===== 滚动动画 =====
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, {threshold:0.1});
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+// 粒子
+(function(){const c=document.getElementById('particles-canvas'),ctx=c.getContext('2d');let w,h,p=[];function r(){w=c.width=window.innerWidth;h=c.height=window.innerHeight}r();window.addEventListener('resize',r);for(let i=0;i<150;i++)p.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*2.5+0.3,vx:(Math.random()-0.5)*0.12,vy:(Math.random()-0.5)*0.12-0.03,a:Math.random()*0.7+0.2,o:Math.random()*0.5+0.3});function d(){ctx.clearRect(0,0,w,h);p.forEach(s=>{s.x+=s.vx;s.y+=s.vy;if(s.x<0)s.x=w;if(s.x>w)s.x=0;if(s.y<0)s.y=h;if(s.y>h)s.y=0;const b=0.5+Math.sin(Date.now()*0.002+s.o)*0.4;ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(255,255,255,${b*s.a})`;ctx.fill();ctx.beginPath();ctx.arc(s.x,s.y,s.r*3,0,Math.PI*2);ctx.fillStyle=`rgba(255,220,240,${b*s.a*0.12})`;ctx.fill()});requestAnimationFrame(d)}d()})();
 
-// ===== 移动端抽屉 =====
-const menuBtn = document.getElementById('mobileMenuBtn');
-const drawer = document.getElementById('mobileDrawer');
-if(menuBtn && drawer){
-  menuBtn.addEventListener('click',() => drawer.classList.toggle('open'));
-  drawer.addEventListener('click',() => drawer.classList.remove('open'));
-}
+// 光斑
+(function(){const c=document.getElementById('bokeh-canvas'),ctx=c.getContext('2d');let w,h,s=[];function r(){w=c.width=window.innerWidth;h=c.height=window.innerHeight}r();window.addEventListener('resize',r);const cl=['255,200,220','200,220,255','255,220,200','220,240,255','255,200,230'];for(let i=0;i<40;i++)s.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*55+18,vx:(Math.random()-0.5)*0.06,vy:-0.015-Math.random()*0.035,color:cl[Math.floor(Math.random()*cl.length)],a:Math.random()*0.12+0.04,ph:Math.random()*Math.PI*2,sp:0.001+Math.random()*0.002});function d(){ctx.clearRect(0,0,w,h);s.forEach(t=>{t.x+=t.vx;t.y+=t.vy;if(t.y<-t.r){t.y=h+t.r;t.x=Math.random()*w}if(t.x<-t.r)t.x=w+t.r;if(t.x>w+t.r)t.x=-t.r;const pu=0.5+Math.sin(Date.now()*t.sp+t.ph)*0.5,ca=t.a*pu;for(let j=3;j>=0;j--){const r2=t.r*(1+j*0.6);ctx.beginPath();ctx.arc(t.x,t.y,r2,0,Math.PI*2);ctx.fillStyle=`rgba(${t.color},${ca*(0.35-j*0.06)})`;ctx.fill()}});requestAnimationFrame(d)}d()})();
 
-// ===== 粒子系统 =====
-// 闪烁星光粒子
-(function(){
-  const c = document.getElementById('particles-canvas');
-  const ctx = c.getContext('2d');
-  let w, h, particles = [];
-  function resize(){w=c.width=window.innerWidth; h=c.height=window.innerHeight}
-  resize(); window.addEventListener('resize',resize);
-  for(let i=0;i<150;i++){
-    particles.push({
-      x:Math.random()*w, y:Math.random()*h, r:Math.random()*2.5+0.3,
-      vx:(Math.random()-0.5)*0.12, vy:(Math.random()-0.5)*0.12 - 0.03,
-      a:Math.random()*0.7+0.2, o:Math.random()*0.5+0.3
-    });
-  }
-  function draw(){
-    ctx.clearRect(0,0,w,h);
-    particles.forEach(p => {
-      p.x += p.vx; p.y += p.vy;
-      if(p.x<0) p.x=w; if(p.x>w) p.x=0;
-      if(p.y<0) p.y=h; if(p.y>h) p.y=0;
-      const bright = 0.5 + Math.sin(Date.now()*0.002 + p.o) * 0.4;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
-      ctx.fillStyle = `rgba(255,255,255,${bright * p.a})`;
-      ctx.fill();
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r*3, 0, Math.PI*2);
-      ctx.fillStyle = `rgba(255,220,240,${bright * p.a * 0.12})`;
-      ctx.fill();
-    });
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
-
-// 柔焦光斑
-(function(){
-  const c = document.getElementById('bokeh-canvas');
-  const ctx = c.getContext('2d');
-  let w, h, spots = [];
-  function resize(){w=c.width=window.innerWidth; h=c.height=window.innerHeight}
-  resize(); window.addEventListener('resize',resize);
-  const colors = ['255,200,220','200,220,255','255,220,200','220,240,255','255,200,230'];
-  for(let i=0;i<40;i++){
-    spots.push({
-      x:Math.random()*w, y:Math.random()*h, r:Math.random()*55+18,
-      vx:(Math.random()-0.5)*0.06, vy:-0.015 - Math.random()*0.035,
-      color:colors[Math.floor(Math.random()*colors.length)],
-      a:Math.random()*0.12+0.04, phase:Math.random()*Math.PI*2,
-      speed:0.001+Math.random()*0.002
-    });
-  }
-  function draw(){
-    ctx.clearRect(0,0,w,h);
-    spots.forEach(s => {
-      s.x += s.vx; s.y += s.vy;
-      if(s.y<-s.r) { s.y=h+s.r; s.x=Math.random()*w }
-      if(s.x<-s.r) s.x=w+s.r; if(s.x>w+s.r) s.x=-s.r;
-      const pulse = 0.5 + Math.sin(Date.now()*s.speed + s.phase) * 0.5;
-      const ca = s.a * pulse;
-      for(let j=3;j>=0;j--){
-        const r2 = s.r * (1 + j*0.6);
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, r2, 0, Math.PI*2);
-        ctx.fillStyle = `rgba(${s.color},${ca * (0.35 - j*0.06)})`;
-        ctx.fill();
-      }
-    });
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
-
-// 漂浮爱心
-(function(){
-  const c = document.getElementById('hearts-canvas');
-  const ctx = c.getContext('2d');
-  let w, h, hearts = [];
-  function resize(){w=c.width=window.innerWidth; h=c.height=window.innerHeight}
-  resize(); window.addEventListener('resize',resize);
-  function drawHeart(x,y,s,color,alpha){
-    ctx.save(); ctx.translate(x,y); ctx.scale(s,s);
-    ctx.beginPath();
-    ctx.moveTo(0,-4);
-    ctx.bezierCurveTo(-6,-10,-14,-4,0,6);
-    ctx.bezierCurveTo(14,-4,6,-10,0,-4);
-    ctx.fillStyle = `rgba(${color},${alpha*0.3})`;
-    ctx.fill();
-    ctx.restore();
-  }
-  for(let i=0;i<15;i++){
-    hearts.push({
-      x:Math.random()*w, y:Math.random()*h, s:Math.random()*0.55+0.12,
-      vy:-0.12 - Math.random()*0.18, vx:(Math.random()-0.5)*0.08,
-      color:['255,150,180','255,180,200','200,180,255','255,200,220'][Math.floor(Math.random()*4)],
-      a:Math.random()*0.25+0.08, phase:Math.random()*Math.PI*2
-    });
-  }
-  function draw(){
-    ctx.clearRect(0,0,w,h);
-    hearts.forEach(h => {
-      h.x += h.vx + Math.sin(Date.now()*0.001+h.phase)*0.08;
-      h.y += h.vy;
-      if(h.y<-30) { h.y=h+30; h.x=Math.random()*w }
-      if(h.x<-30) h.x=w+30; if(h.x>w+30) h.x=-30;
-      const pulse = 0.6 + Math.sin(Date.now()*0.0015+h.phase)*0.4;
-      drawHeart(h.x, h.y, h.s*pulse, h.color, h.a);
-    });
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
+// 爱心
+(function(){const c=document.getElementById('hearts-canvas'),ctx=c.getContext('2d');let w,h,hrt=[];function r(){w=c.width=window.innerWidth;h=c.height=window.innerHeight}r();window.addEventListener('resize',r);function dh(x,y,s,cl,al){ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.beginPath();ctx.moveTo(0,-4);ctx.bezierCurveTo(-6,-10,-14,-4,0,6);ctx.bezierCurveTo(14,-4,6,-10,0,-4);ctx.fillStyle=`rgba(${cl},${al*0.3})`;ctx.fill();ctx.restore()}for(let i=0;i<15;i++)hrt.push({x:Math.random()*w,y:Math.random()*h,s:Math.random()*0.55+0.12,vy:-0.12-Math.random()*0.18,vx:(Math.random()-0.5)*0.08,color:['255,150,180','255,180,200','200,180,255','255,200,220'][Math.floor(Math.random()*4)],a:Math.random()*0.25+0.08,ph:Math.random()*Math.PI*2});function d(){ctx.clearRect(0,0,w,h);hrt.forEach(t=>{t.x+=t.vx+Math.sin(Date.now()*0.001+t.ph)*0.08;t.y+=t.vy;if(t.y<-30){t.y=h+30;t.x=Math.random()*w}if(t.x<-30)t.x=w+30;if(t.x>w+30)t.x=-30;const pu=0.6+Math.sin(Date.now()*0.0015+t.ph)*0.4;dh(t.x,t.y,t.s*pu,t.color,t.a)});requestAnimationFrame(d)}d()})();
 </script>
 </body>
 </html>
