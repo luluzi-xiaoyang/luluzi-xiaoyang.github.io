@@ -1,396 +1,765 @@
-/* ============================================================
-   情侣空间 · 温馨奶油风 v2 — 强制覆盖版
+﻿/* ============================================================
+   鎯呬荆绌洪棿 路 娴极鏄熺┖涓婚 v3
+   鍏ㄥ睆鍔ㄦ€佹槦绌鸿儗鏅?+ 椋樿惤鏄熷厜 + 娴佸姩鏄熶簯 + 纾ㄧ爞鐜荤拑鍗＄墖
    ============================================================ */
 
-/* ---------- 全局字体 ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap');
 
+/* ---------- 鍩虹鍙橀噺 ---------- */
 :root {
-  --font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif !important;
+  --font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  
+  /* 娴极鑹茬郴 */
+  --color-bg-deep: #0d0a12;
+  --color-bg-mid: #1a1423;
+  --color-accent-pink: #f4a4c0;
+  --color-accent-rose: #e8b4cb;
+  --color-accent-purple: #c9b1d4;
+  --color-accent-blue: #a8c5e2;
+  --color-accent-lavender: #d4c4e0;
+  
+  /* 鐜荤拑鍗＄墖 */
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  
+  /* 鏂囧瓧 */
+  --text-primary: #f5f0f5;
+  --text-secondary: #c9c4d4;
+  --text-muted: #8a8494;
+  
+  /* 鍔ㄧ敾 */
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-html {
-  scroll-behavior: smooth !important;
+/* ---------- 鍏ㄥ眬閲嶇疆涓庢槦绌鸿儗鏅?---------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: var(--font-family);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.8;
+  color: var(--text-primary);
+  background: var(--color-bg-deep);
+  overflow-x: hidden;
+  position: relative;
 }
 
-/* ---------- 背景与全局 — 最重要 ---------- */
-body {
-  font-family: var(--font-family) !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.01em !important;
-  color: #1f2937 !important;
-  background: #fdf6f0 !important;
-  background-image:
-    radial-gradient(ellipse at 15% 5%, rgba(254, 205, 211, 0.25) 0%, transparent 50%) !important,
-    radial-gradient(ellipse at 85% 90%, rgba(255, 237, 213, 0.3) 0%, transparent 50%) !important,
-    radial-gradient(ellipse at 50% 40%, rgba(254, 242, 242, 0.15) 0%, transparent 60%) !important;
-  background-attachment: fixed !important;
-  min-height: 100vh !important;
+/* 鏄熺┖鐢诲竷灞?*/
+#starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+  pointer-events: none;
 }
 
-/* ---------- 导航栏 — 毛玻璃奶油玫瑰 ---------- */
+/* 鏄熶簯鑳屾櫙灞?*/
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(244, 164, 192, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(168, 197, 226, 0.12) 0%, transparent 45%),
+    radial-gradient(ellipse 70% 60% at 70% 80%, rgba(201, 177, 212, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 30% at 30% 90%, rgba(232, 180, 203, 0.08) 0%, transparent 40%);
+  animation: nebulaFlow 20s ease-in-out infinite;
+}
+
+@keyframes nebulaFlow {
+  0%, 100% { 
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  33% { 
+    opacity: 0.9;
+    transform: scale(1.02) rotate(0.5deg);
+  }
+  66% { 
+    opacity: 0.95;
+    transform: scale(0.98) rotate(-0.3deg);
+  }
+}
+
+/* 瑙掕惤鍏夋檿 */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(244, 164, 192, 0.2) 0%, transparent 35%),
+    radial-gradient(circle at 100% 0%, rgba(168, 197, 226, 0.15) 0%, transparent 30%),
+    radial-gradient(circle at 100% 100%, rgba(201, 177, 212, 0.18) 0%, transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(232, 180, 203, 0.12) 0%, transparent 25%);
+  pointer-events: none;
+}
+
+/* ---------- 鍏ㄥ眬鍛煎惛鍔ㄦ晥 ---------- */
+@keyframes breathe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+.breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+/* ---------- 瀵艰埅鏍?- 纾ㄧ爞鐜荤拑 ---------- */
 .nav,
 .header-nav,
-nav {
-  background: rgba(255, 255, 255, 0.88) !important;
-  backdrop-filter: blur(20px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  border-bottom: 1px solid rgba(254, 205, 211, 0.35) !important;
-  position: sticky !important;
-  top: 0 !important;
-  z-index: 100 !important;
-  box-shadow: 0 1px 12px rgba(244, 63, 94, 0.06) !important;
-  padding: 0.8rem 0 !important;
+header nav {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--glass-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--glass-shadow);
+  padding: 1rem 0;
 }
 
 .nav a,
 .nav .logo a,
 .nav .menu a,
 .header-nav a,
-.header-nav .logo a,
-.header-nav .menu a,
-nav a,
-nav .logo a,
-nav ul li a {
-  color: #e11d48 !important;
-  font-weight: 500 !important;
-  transition: all 0.2s ease !important;
-  text-decoration: none !important;
+header nav a {
+  color: var(--color-accent-pink) !important;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+  position: relative;
 }
 
 .nav a:hover,
 .nav .menu a:hover,
-.header-nav a:hover,
-header nav a:hover {
-  color: #f43f5e !important;
-  transform: translateY(-1px) !important;
+.header-nav a:hover {
+  color: var(--color-accent-rose) !important;
+  text-shadow: 0 0 20px rgba(244, 164, 192, 0.5);
 }
 
-.nav .menu .active,
-nav .menu li.active a {
-  text-decoration-color: #fb7185 !important;
-  text-underline-offset: 4px !important;
+.nav .menu .active a,
+.nav a[aria-current="page"] {
+  color: var(--color-accent-lavender) !important;
 }
 
-.nav-sep {
-  color: #fecdd3 !important;
+/* ---------- 涓诲鍣?---------- */
+.main,
+main.main,
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
 }
 
-/* ---------- 首页欢迎区 ---------- */
+/* ---------- 鐜荤拑鍗＄墖閫氱敤鏍峰紡 ---------- */
+.glass-card,
+.post-entry,
+article.post-entry,
+.first-entry,
+.home-info,
+.entry-content,
+.post-content,
+.page-content,
+main article {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: 
+    var(--glass-shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  padding: 2rem 2.5rem;
+  margin-bottom: 2rem;
+  transition: var(--transition-smooth);
+}
+
+.glass-card:hover,
+.post-entry:hover,
+article.post-entry:hover {
+  transform: translateY(-6px);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(244, 164, 192, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  border-color: rgba(244, 164, 192, 0.25);
+}
+
+/* ---------- 棣栭〉娆㈣繋鍖?---------- */
 .home-info,
 .first-entry.home-info {
-  padding: 2rem 0 !important;
+  text-align: center;
+  padding: 3rem 2rem;
 }
 
 .home-info h1,
-.home-info .entry-header h1,
 .first-entry .entry-header h1,
-.first-entry .entry-header h2 {
-  color: #e11d48 !important;
-  font-weight: 700 !important;
-  letter-spacing: -0.01em !important;
-  -webkit-text-fill-color: unset !important;
-  background: none !important;
+.home-info .entry-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--color-accent-pink) 0%, var(--color-accent-purple) 50%, var(--color-accent-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  text-shadow: none;
 }
 
 .home-info p,
 .home-info .entry-content,
 .home-info .entry-content p {
-  color: #6b7280 !important;
-  line-height: 1.8 !important;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 2;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
 }
 
-/* ---------- 文章卡片 — 温柔圆角卡片 ---------- */
-.post-entry,
-article.post-entry,
-main article {
-  background: #ffffff !important;
-  border-radius: 20px !important;
-  border: 1px solid rgba(254, 205, 211, 0.35) !important;
-  box-shadow:
-    0 2px 8px rgba(244, 63, 94, 0.04),
-    0 8px 24px rgba(244, 63, 94, 0.03) !important;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-  overflow: hidden !important;
-  padding: 1.2rem 1.5rem !important;
-  margin-bottom: 1rem !important;
+.home-info strong {
+  color: var(--color-accent-rose);
+  font-weight: 600;
 }
 
-.post-entry:hover,
-article.post-entry:hover {
-  transform: translateY(-4px) !important;
-  box-shadow:
-    0 4px 16px rgba(244, 63, 94, 0.08),
-    0 16px 40px rgba(244, 63, 94, 0.06) !important;
-  border-color: #fda4af !important;
+.home-info blockquote {
+  border: none;
+  background: transparent;
+  color: var(--color-accent-lavender);
+  font-style: italic;
+  font-size: 1.2rem;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  position: relative;
 }
 
+.home-info blockquote::before,
+.home-info blockquote::after {
+  content: '"';
+  font-size: 3rem;
+  color: var(--color-accent-pink);
+  opacity: 0.3;
+  position: absolute;
+}
+
+.home-info blockquote::before {
+  top: -0.5rem;
+  left: 0;
+}
+
+.home-info blockquote::after {
+  content: '"';
+  bottom: -1.5rem;
+  right: 0;
+}
+
+/* ---------- 鏂囩珷鏍囬 ---------- */
+.post-entry .entry-title,
 .post-entry .entry-title a,
+article .entry-header .entry-title,
 article .entry-header .entry-title a {
-  color: #1f2937 !important;
-  font-weight: 600 !important;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition-smooth);
 }
 
 .post-entry .entry-title a:hover,
 article .entry-header .entry-title a:hover {
-  color: #f43f5e !important;
+  color: var(--color-accent-pink);
+  text-shadow: 0 0 20px rgba(244, 164, 192, 0.4);
 }
 
-.entry-hint,
-.post-entry .entry-hint {
-  color: #9ca3af !important;
-  font-size: 0.85rem !important;
+/* ---------- 鏂囩珷鍏冧俊鎭?---------- */
+.entry-meta,
+.post-entry .entry-meta,
+.post-meta {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
 }
 
-/* ---------- 文章列表容器 ---------- */
-.posts-list,
-main.list main,
-main.list > article:first-of-type ~ article {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 1rem !important;
+.entry-meta a,
+.post-meta a {
+  color: var(--color-accent-purple);
 }
 
-/* ---------- 分类/标签 — 柔和药丸 ---------- */
+/* ---------- 鏂囩珷鍐呭 ---------- */
+.post-content,
+.entry-content,
+.post-entry .entry-content {
+  color: var(--text-secondary);
+  line-height: 2;
+}
+
+.post-content h2,
+.entry-content h2,
+.post-content h3,
+.entry-content h3 {
+  color: var(--color-accent-rose);
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.post-content p,
+.entry-content p {
+  margin-bottom: 1.2rem;
+}
+
+.post-content strong,
+.entry-content strong {
+  color: var(--color-accent-pink);
+  font-weight: 600;
+}
+
+.post-content ul,
+.entry-content ul,
+.post-content ol,
+.entry-content ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-content li,
+.entry-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- 琛ㄦ牸 ---------- */
+.post-content table,
+.entry-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  background: var(--glass-bg);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.post-content th,
+.entry-content th {
+  background: rgba(244, 164, 192, 0.1);
+  color: var(--color-accent-pink);
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+}
+
+.post-content td,
+.entry-content td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+}
+
+.post-content tr:last-child td,
+.entry-content tr:last-child td {
+  border-bottom: none;
+}
+
+/* ---------- 鍥剧墖 ---------- */
+.post-content img,
+.entry-content img {
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  margin: 1.5rem 0;
+  display: block;
+}
+
+/* ---------- 鍒嗙被/鏍囩 - 鏄熷厜鑽父 ---------- */
 .terms-tags,
-.terms-tags ul {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 0.6rem !important;
-  margin-top: 1.5rem !important;
+.tags,
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+  justify-content: center;
 }
 
-.terms-tags li {
-  display: inline-block !important;
+.terms-tags a,
+.tags a,
+.post-tags a,
+.tag {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background: rgba(244, 164, 192, 0.1);
+  border: 1px solid rgba(244, 164, 192, 0.2);
+  border-radius: 100px;
+  color: var(--color-accent-pink);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
 }
 
-.terms-tags a {
-  display: inline-block !important;
-  padding: 8px 18px !important;
-  background: #fff1f2 !important;
-  border: 1px solid #ffe4e6 !important;
-  border-radius: 100px !important;
-  color: #e11d48 !important;
-  font-size: 0.88rem !important;
-  font-weight: 500 !important;
-  transition: all 0.3s ease !important;
-  text-decoration: none !important;
+.terms-tags a::before,
+.tags a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
 }
 
-.terms-tags a:hover {
-  background: #f43f5e !important;
-  border-color: #f43f5e !important;
-  color: #ffffff !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 4px 14px rgba(244, 63, 94, 0.25) !important;
+.terms-tags a:hover::before,
+.tags a:hover::before {
+  left: 100%;
 }
 
-/* ---------- 归档 — 柔和时间线 ---------- */
+.terms-tags a:hover,
+.tags a:hover {
+  background: rgba(244, 164, 192, 0.25);
+  border-color: var(--color-accent-pink);
+  color: var(--color-accent-rose);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(244, 164, 192, 0.3);
+}
+
+/* ---------- 褰掓。 ---------- */
 .archive-year {
-  font-size: 1.5rem !important;
-  font-weight: 700 !important;
-  color: #f43f5e !important;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-accent-pink);
+  margin: 2rem 0 1rem;
+  text-align: center;
+}
+
+.archive-month {
+  margin: 1.5rem 0;
 }
 
 .archive-month-header {
-  font-weight: 600 !important;
-  color: #fb7185 !important;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-accent-purple);
+  margin-bottom: 0.8rem;
 }
 
 .archive-entry {
-  padding: 8px 14px !important;
-  margin: 4px 0 !important;
-  border-radius: 10px !important;
-  transition: background 0.2s ease !important;
+  padding: 0.8rem 1.2rem;
+  margin: 0.5rem 0;
+  border-radius: 12px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  transition: var(--transition-smooth);
 }
 
 .archive-entry:hover {
-  background: #fff1f2 !important;
+  background: rgba(244, 164, 192, 0.08);
+  border-color: rgba(244, 164, 192, 0.2);
+  transform: translateX(4px);
 }
 
-/* ---------- 链接 — 玫瑰色 ---------- */
+.archive-entry a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.archive-entry a:hover {
+  color: var(--color-accent-pink);
+}
+
+/* ---------- 閾炬帴 ---------- */
 a {
-  color: #f43f5e !important;
-  transition: color 0.2s ease !important;
+  color: var(--color-accent-blue);
+  text-decoration: none;
+  transition: var(--transition-smooth);
 }
 
 a:hover {
-  color: #e11d48 !important;
+  color: var(--color-accent-pink);
 }
 
-/* ---------- 分隔线 — 淡粉渐变 ---------- */
+/* ---------- 鍒嗛殧绾?- 鏄熷厜 ---------- */
 hr {
-  border: none !important;
-  height: 1px !important;
-  background: linear-gradient(90deg, transparent 0%, #fecdd3 30%, #fda4af 50%, #fecdd3 70%, transparent 100%) !important;
-  margin: 2rem 0 !important;
-  opacity: 0.6 !important;
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(244, 164, 192, 0.3) 20%, 
+    rgba(201, 177, 212, 0.5) 50%, 
+    rgba(168, 197, 226, 0.3) 80%, 
+    transparent 100%
+  );
+  margin: 2.5rem auto;
+  max-width: 60%;
+  position: relative;
 }
 
-/* ---------- 滚动条 — 柔和玫瑰 ---------- */
-::-webkit-scrollbar { width: 6px !important; height: 6px !important; }
-::-webkit-scrollbar-track { background: transparent !important; }
-::-webkit-scrollbar-thumb { background: #fecdd3 !important; border-radius: 10px !important; }
-::-webkit-scrollbar-thumb:hover { background: #fda4af !important; }
-* { scrollbar-width: thin !important; scrollbar-color: #fecdd3 transparent !important; }
-
-/* ---------- 面包屑 ---------- */
-.breadcrumbs { color: #9ca3af !important; font-size: 0.85rem !important; }
-.breadcrumbs a { color: #fb7185 !important; }
-
-/* ---------- 代码块 ---------- */
-div.highlight {
-  border-radius: 14px !important;
-  overflow: hidden !important;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04) !important;
+hr::after {
+  content: '鉁?;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-accent-pink);
+  font-size: 0.8rem;
+  background: var(--color-bg-deep);
+  padding: 0 1rem;
 }
 
-/* ---------- 引用块 — 温馨玫瑰 ---------- */
+/* ---------- 寮曠敤鍧?---------- */
 blockquote {
-  border-left: 3px solid #fda4af !important;
-  background: #fff1f2 !important;
-  padding: 0.8rem 1.2rem !important;
-  border-radius: 0 12px 12px 0 !important;
-  color: #6b7280 !important;
+  background: rgba(244, 164, 192, 0.05);
+  border-left: 3px solid var(--color-accent-pink);
+  padding: 1.2rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 16px 16px 0;
+  color: var(--text-secondary);
+  font-style: italic;
 }
 
-/* ---------- 页脚 ---------- */
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- 浠ｇ爜鍧?---------- */
+pre,
+code {
+  font-family: 'Fira Code', 'JetBrains Mono', Consolas, monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1.2rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+code {
+  background: rgba(244, 164, 192, 0.1);
+  color: var(--color-accent-pink);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+}
+
+pre code {
+  background: transparent;
+  color: var(--text-secondary);
+  padding: 0;
+}
+
+/* ---------- 椤佃剼 ---------- */
 .footer,
 footer {
-  color: #9ca3af !important;
-  padding: 2rem 0 1rem !important;
-  text-align: center !important;
-  font-size: 0.85rem !important;
-  margin-top: 3rem !important;
-  border-top: 1px solid #ffe4e6 !important;
+  text-align: center;
+  padding: 3rem 1.5rem 2rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--glass-border);
+  margin-top: 3rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
 }
 
-/* ---------- 选中文字 ---------- */
+.footer a,
+footer a {
+  color: var(--color-accent-purple);
+}
+
+/* ---------- 婊氬姩鏉?- 鏄熷厜 ---------- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-accent-pink), var(--color-accent-purple));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--color-accent-rose), var(--color-accent-pink));
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent-pink) var(--color-bg-deep);
+}
+
+/* ---------- 閫変腑鏂囧瓧 ---------- */
 ::selection {
-  background: #ffe4e6 !important;
-  color: #e11d48 !important;
+  background: rgba(244, 164, 192, 0.3);
+  color: var(--text-primary);
 }
 
-/* ---------- 主内容区宽度 ---------- */
-.main,
-main.main {
-  max-width: 720px !important;
-  width: 100% !important;
-  padding: 0 1rem !important;
+/* ---------- 闈㈠寘灞?---------- */
+.breadcrumbs {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
 }
 
-/* ---------- Header 区域 ---------- */
-.header,
-header.header {
-  max-width: 1024px !important;
-  margin: 0 auto !important;
-  padding: 0 1rem !important;
+.breadcrumbs a {
+  color: var(--color-accent-purple);
 }
 
-/* ---------- Logo 样式 ---------- */
-.logo a {
-  font-weight: 600 !important;
-  font-size: 1.1rem !important;
+.breadcrumbs a:hover {
+  color: var(--color-accent-pink);
 }
 
-/* ---------- 菜单列表 ---------- */
-.menu,
-#menu,
-nav ul {
-  display: flex !important;
-  gap: 1.5rem !important;
-  list-style: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
+/* ---------- 鍒嗛〉 ---------- */
+.pagination,
+.paginav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
 }
 
-.menu li,
-#menu li,
-nav ul li {
-  list-style: none !important;
+.pagination a,
+.paginav a {
+  padding: 0.6rem 1.2rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition-smooth);
 }
 
-/* ---------- 暗色模式适配 ---------- */
+.pagination a:hover,
+.paginav a:hover {
+  background: rgba(244, 164, 192, 0.1);
+  border-color: var(--color-accent-pink);
+  color: var(--color-accent-pink);
+}
+
+/* ---------- 鏆楄壊妯″紡锛堟湰韬氨鏄殫鑹诧紝寰皟鍗冲彲锛?---------- */
 [data-theme="dark"] body,
-.dark body,
-[data-theme="dark"],
-.dark {
-  background: #1a1215 !important;
-  background-image:
-    radial-gradient(ellipse at 15% 5%, rgba(225, 29, 72, 0.08) 0%, transparent 50%) !important,
-    radial-gradient(ellipse at 85% 90%, rgba(190, 18, 60, 0.06) 0%, transparent 50%) !important;
-  color: #e5e7eb !important;
+.dark body {
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
 }
 
-[data-theme="dark"] .nav,
-.dark .nav,
-[data-theme="dark"] header nav,
-.dark header nav {
-  background: rgba(26, 18, 21, 0.88) !important;
-  border-bottom-color: rgba(225, 29, 72, 0.15) !important;
-}
-
-[data-theme="dark"] .nav a,
-[data-theme="dark"] nav a,
-.dark .nav a,
-.dark nav a {
-  color: #fda4af !important;
-}
-
-[data-theme="dark"] .post-entry,
-[data-theme="dark"] article.post-entry,
-.dark .post-entry,
-.dark article.post-entry {
-  background: #231a1e !important;
-  border-color: rgba(225, 29, 72, 0.2) !important;
-}
-
-[data-theme="dark"] .post-entry .entry-title a,
-[data-theme="dark"] article .entry-title a,
-.dark .post-entry .entry-title a,
-.dark article .entry-title a {
-  color: #f3f4f6 !important;
-}
-
-[data-theme="dark"] .terms-tags a,
-.dark .terms-tags a {
-  background: rgba(225, 29, 72, 0.1) !important;
-  border-color: rgba(225, 29, 72, 0.2) !important;
-  color: #fda4af !important;
-}
-
-[data-theme="dark"] blockquote,
-.dark blockquote {
-  background: rgba(225, 29, 72, 0.08) !important;
-}
-
-[data-theme="dark"] hr,
-.dark hr {
-  background: linear-gradient(90deg, transparent, rgba(225, 29, 72, 0.3), rgba(190, 18, 60, 0.4), rgba(225, 29, 72, 0.3), transparent) !important;
-}
-
-[data-theme="dark"] .footer,
-.dark footer {
-  border-top-color: rgba(225, 29, 72, 0.15) !important;
-}
-
-/* ---------- 响应式 ---------- */
+/* ---------- 鍝嶅簲寮?---------- */
 @media (max-width: 768px) {
-  .first-entry .entry-header h1 {
-    font-size: 26px !important;
+  .main,
+  main.main {
+    padding: 1.5rem 1rem;
   }
+  
+  .glass-card,
   .post-entry,
-  article.post-entry {
-    padding: 1rem 1.1rem !important;
-    border-radius: 16px !important;
+  article.post-entry,
+  .home-info,
+  .first-entry {
+    padding: 1.5rem;
+    border-radius: 20px;
   }
-  .terms-tags a {
-    padding: 6px 14px !important;
-    font-size: 0.82rem !important;
+  
+  .home-info h1,
+  .first-entry .entry-header h1 {
+    font-size: 1.8rem;
   }
+  
+  .home-info p,
+  .home-info .entry-content p {
+    font-size: 1rem;
+  }
+  
+  .nav,
+  .header-nav {
+    padding: 0.8rem 0;
+  }
+  
   .menu,
-  #menu,
-  nav ul {
-    gap: 1rem !important;
+  #menu {
+    gap: 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .terms-tags {
+    gap: 0.5rem;
+  }
+  
+  .terms-tags a {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* ---------- 鐗规畩鍔ㄧ敾绫?---------- */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(244, 164, 192, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(244, 164, 192, 0.4); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.glow-animation {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* ---------- 绮掑瓙瀹瑰櫒 ---------- */
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
   }
 }
